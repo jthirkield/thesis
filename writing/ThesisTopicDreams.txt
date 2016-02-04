@@ -1,0 +1,62 @@
+Sleep/Dream
+Research Question
+I am visualizing clinical studies of the brain/language of dreaming because I want to show how computer graphics can represent/express text in order to better represent internal (brain) and linguistic (text reports)
+
+Thesis Statement
+The brain as a black box vs the computer as a black box, how can a computer mirror the activity of meaning creation while questioning its own production of visual language...
+
+Cognitive Science
+	Studies of Visual Perception
+	Studies in Cognitive Bodiment
+
+Psychological Studies
+	current literature on dream studies
+
+THE DATA
+***WHERE/HOW TO GET***
+http://brainliner.jp/data/brainliner/Human_Dream_Decoding
+HumanDreamDeCoding
+Concluded Preferable to Ongoing
+Other Possible Sources
+	OPEN BCI
+	NSSR
+What: Alpha/Theta wave changes
+Text reports of the dreams (optional)
+Approach to data
+	SQL-waves
+	Poss: Mongo for text
+
+Creative Language
+	applying studies of text based perception
+		Elaine Scarry, Dreaming by the Book
+	How language constructs experience
+	Tension/FaultLines between the visual and text-based
+		Representations of PATTERN
+	Physics vs Metaphysics of Representation
+
+The Visualization
+	Motion/Patterns of Data -- time laspe
+		types of pattern representation
+			primatives
+			trees
+			letters
+			images
+			architecture
+			comic book frames
+	Words possible (if available)
+
+Thesis Statement/Research Question
+The brain as a black box vs the computer as a black box, how can a computer mirror the activity of meaning creation while questioning its own production of visual language...
+I am visualizing clinical studies of the brain/language of dreaming because I want to show how computer graphics can represent/express text in order to better represent internal (brain) and linguistic (text reports)
+
+Audience
+	Academic
+		Literature
+		Philosophy
+	Medical
+		Research/Cognitive Psychology
+	Speculative Fiction
+		tell is a story/rhythm via data
+
+Prior Study
+http://laughingsquid.com/japanese-scientists-develop-system-that-can-visualize-dreams-based-on-brain-activity/

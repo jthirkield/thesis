@@ -1,0 +1,70 @@
+Topic: Dante's Divine Comedy
+Research Question
+I am visualizing Dante's Divine Comedy because I want to show how visualization and text interact in order to see how GUI platforms can expand subjective/collective engagement with text worlds.
+
+Subjective Reading as Visualization
+		Once the Map (Foundational Visualization) is established a variety of interpretive components can be added based on the mapped or text-based location.
+			Notes/Translations
+			Figures: Image/Sketches/Motion
+			Responses/Personal Info
+			Highlighting the Subjectivity of my interpretation
+		SOCIAL ASPECT
+			Built to allow for other "readings"
+			No hierarchy of readings, just expanding nodes of interpretation
+			Sharing of subjective experience/Building of complex collective subjectivities
+			sharing of images
+			Built to allow for other to add new components to the world
+
+Machine Reading
+	create a pattern searching algorithm that reads both the original Italian / the english translation(s)/other translations (as add) / as well as the readings
+
+MAP Foundational Visualization
+	INTERACTIVE map of the terrian
+		Hell
+			Downward Spirial
+			Always goes left?
+			Darker/Colder
+			City of Dis
+			Circles
+		Purgatory
+			Upward Spiral (Mountain)
+			Always goes right?
+			9 levles
+			Ends on Garden
+		Paradise
+			Celestial Bodies
+			Moon/Mercury/
+			Ethereal Spirits
+			Rose
+	Time Lapse
+		7 Days?
+		Time Told Via Celestial Positions
+		Medieval Planetary Model
+	Geographical Position
+		Italy -- Jerusalem -- Moon -- Ether -- etc
+		Medieval Geography
+
+Audience
+	readers
+	poets/writers
+	translators
+	people who are alive
+	people who are dead
+	academic (only later)
+		This will be not built for academics to quibble over meanings, although it will be open to criticism from academics
+
+Thesis Questions
+	What is a "reading" in the context of GUI
+	How is reading/visualization an expressive act
+	How we do maintain/lose the primacy of text as the basis for complex meaning creation
+		the primacy of text as the basis of shared experience
+		Story/Poetic Structure as foundation for imaginative expansion
+	How can a virtual/metaphysical world be built from a source text
+		That to Dante the text was more "real" than the world
+	How do we make images from text in the act of reading
+		How does that differ from a computer's facility for image making
+		Text to world theory
+		phantasm and metalanguage
+	How is this act form of transaltion
+		Source text in Italian: machine will read that part
+		Text to Visual is a translation
