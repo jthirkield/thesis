@@ -1,12 +1,23 @@
-Boyde, P. (1993). Perception and passion in Dante's Comedy.
+Alighieri, Dante, Robert Hollander, and Jean Hollander. Inferno. New York: Doubleday, 2000. Print.
 
-Gavins, J. (2007). Text World Theory An Introduction.
+Alighieri, Dante, Jean Hollander, and Robert Hollander. Purgatorio. New York: Doubleday, 2003. Print.
 
-Moevs, C. (2005). The metaphysics of Dante's Comedy. New York: Oxford University Press.
+Alighieri, Dante, Robert Hollander, and Jean Hollander. Paradiso. New York: Doubleday, 2007. Print.
 
-Moretti, F. (2005). Graphs, maps, trees: Abstract models for a literary history. London: Verso.
+Borges: Selected Non-fictions. Penguin: 2000. Print.
 
-Schwenger, P. (1999). Fantasm and fiction: On textual envisioning. Stanford, CA: Stanford University Press.
+Boyde, Patrick. "Perception and Passion in Dante's Comedy." (1993). Web.
 
-Velmans, M., & Schneider, S. (2007). The Blackwell companion to consciousness. Malden, MA: Blackwell Pub.
+Gavins, Joanna. Text World Theory: An Introduction. Edinburgh: Edinburgh UP, 2007. Print.
 
+Moevs, Christian. The Metaphysics of Dante's Comedy. New York: Oxford UP, 2005. Print.
+
+Moretti, Franco. Distant Reading. Print.
+
+Moretti, Franco. Graphs, Maps, Trees: Abstract Models for a Literary History. London: Verso, 2005. Print.
+
+Peterson, Mark A. Galileo's Muse: Renaissance Mathematics and the Arts. Cambridge, MA: Harvard UP, 2011. Print.
+
+Scarry, Elaine. Dreaming by the Book. New York: Farrar, Straus and Giroux, 1999. Print.
+
+Schwenger, Peter. Fantasm and Fiction: On Textual Envisioning. Stanford, CA: Stanford UP, 1999. Print.
