@@ -3,7 +3,7 @@
 ###Introduction
 ###Treatment
 ##1. Dante's topology
-	1.1. Inferno/Purgatory/Paradise
+<ul>1.1. Inferno/Purgatory/Paradise
 	-Shape of Topology of Dante's Universe: Why visualize Dante? Because it is such a rich universe, and you will learn its general topology so that we can go through Dante's journey... 
 	-Dante's Journey/how he creates the landscape: Dante is especially detailed about his universe, he wants you to imagine it, he is very very specific, and even provides ways of measuring giants and the devil. What else does he measure?
 	-Other measures: He tell you where he is in time Easter week (1300), he tells you where he is in relationship to earth's geography and the constellations, and he what time of day it is. Then, in Paradise, he tell you what planet he is on.
@@ -16,7 +16,7 @@
 	-Geometric synergy: The power of Dante is the geometric basis of his world, the interface is geometrically tuned
 	-Spatial thinking: Reading a text like Dante's requires complex geometric thinking, the interface can aid/enhance that space
 	-Renewing Reading: maybe you want to understand the poem on a deeper level, I would like to find a way to help you do that, maybe there is a way of reading spatially...
-
+</ul>
 ##2. Reading as Visualization
 	2.1. Borges reading of Dante: Why Borges? Because he is a bridge between Dante and us, and because he is an epistemological bridge between literature and the internet.
 	-Borges is my Virgil: Borges is a spatial reader, he guides my methods of reading so that I'm not just making this up as I go along.
