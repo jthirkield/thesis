@@ -3,9 +3,11 @@
 ###Introduction
 ###Treatment
 ##1. Dante's topology
-<ul>1.1. Inferno/Purgatory/Paradise
-	-Shape of Topology of Dante's Universe: Why visualize Dante? Because it is such a rich universe, and you will learn its general topology so that we can go through Dante's journey... 
-	-Dante's Journey/how he creates the landscape: Dante is especially detailed about his universe, he wants you to imagine it, he is very very specific, and even provides ways of measuring giants and the devil. What else does he measure?
+1.1. Inferno/Purgatory/Paradise
+
+  -Shape of Topology of Dante's Universe: Why visualize Dante? Because it is such a rich universe, and you will learn its general topology so that we can go through Dante's journey... 
+	
+  -Dante's Journey/how he creates the landscape: Dante is especially detailed about his universe, he wants you to imagine it, he is very very specific, and even provides ways of measuring giants and the devil. What else does he measure?
 	-Other measures: He tell you where he is in time Easter week (1300), he tells you where he is in relationship to earth's geography and the constellations, and he what time of day it is. Then, in Paradise, he tell you what planet he is on.
 	-Aristotilian Ptomelic Universe: Where did Dante get his model of the universe, from Aristole and Ptomely...
 	1.2. Historical Interpretations
