@@ -2,8 +2,8 @@
 
 ###Introduction
 ###Treatment
-####1 Dante's topology
-1.1. Inferno/Purgatory/Paradise
+##1. Dante's topology
+	1.1. Inferno/Purgatory/Paradise
 	-Shape of Topology of Dante's Universe: Why visualize Dante? Because it is such a rich universe, and you will learn its general topology so that we can go through Dante's journey... 
 	-Dante's Journey/how he creates the landscape: Dante is especially detailed about his universe, he wants you to imagine it, he is very very specific, and even provides ways of measuring giants and the devil. What else does he measure?
 	-Other measures: He tell you where he is in time Easter week (1300), he tells you where he is in relationship to earth's geography and the constellations, and he what time of day it is. Then, in Paradise, he tell you what planet he is on.
@@ -17,7 +17,7 @@
 	-Spatial thinking: Reading a text like Dante's requires complex geometric thinking, the interface can aid/enhance that space
 	-Renewing Reading: maybe you want to understand the poem on a deeper level, I would like to find a way to help you do that, maybe there is a way of reading spatially...
 
-####2. Reading as Visualization
+##2. Reading as Visualization
 	2.1. Borges reading of Dante: Why Borges? Because he is a bridge between Dante and us, and because he is an epistemological bridge between literature and the internet.
 	-Borges is my Virgil: Borges is a spatial reader, he guides my methods of reading so that I'm not just making this up as I go along.
 	-Coleridge's Flower: Do you want to dream about a flower and then wake up with it in your hand?
@@ -26,7 +26,7 @@
 	2.3. Expressive Reading
 	how is reading/visualization an expressive act: once you have dreamed that flower and you wake up and its not in your hand, then maybe you should make yourself
     story/poetic structure as foundation: the advantage of creating a visual interface as that it will allow you to create and then attach that flower to the part of the book that directed you to create it in the first place
-####3. Visualization as Reading
+##3. Visualization as Reading
 	3.1. GUI as transformation of the reading experience: do you think the GUI is a terrible place for reading, I agree.
 	-Graphesis/Hayles/McGann / Imagining Language: These people think it's more complicated and they have some cool ideas about how to deal with the GUI as reading space, lets discuss their approaches and see if they are helpful
 	3.2. Previous examples of Visualizations of proir text
