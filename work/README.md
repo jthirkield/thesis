@@ -9,6 +9,6 @@
 
 ## [Work](https://github.com/jthirkield/thesis/blob/master/work/README.md)
 *   [System Diagram/Data Structures](https://github.com/jthirkield/thesis/blob/master/work/dante_system_diagram.pdf)
-*   [Threejs Prototype](https://github.com/jthirkield/thesis/blob/master/work/dante_system_diagram.pdf)
+*   [Threejs Prototype](http://floatingmedia.com/threejs/examples/webgl_interactive_points.html)
 *   [Inferno Sketch 1](https://github.com/jthirkield/thesis/blob/master/work/Inferno_Sketch1.pdf)
 *   [Inferno Sketch 2](https://github.com/jthirkield/thesis/blob/master/work/Inferno_Sketch2.pdf)
