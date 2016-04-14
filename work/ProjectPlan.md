@@ -1,7 +1,7 @@
 PROJECT PLAN FOR 3D-MAP OF INFERNO
 
 Data: Dante's Inferno -- Original Italian Text & Hollander Translation from Princeton Dante Project
-Data Structures: JSON Object of Poem divided by marked by location and memetic typologies [see DataStructures.txt](https://github.com/jthirkield/thesis/blob/master/work/DataStructures.txt)
+Data Structures: JSON Object of Poem divided by marked by location and memetic typologies [see Data Work](https://github.com/jthirkield/thesis/blob/master/work/DataStructures.txt)
 Total Number of lines: 4420 lines / estimated 1000 objects
 
 
