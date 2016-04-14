@@ -1,0 +1,78 @@
+VERSE OBJECT
+{
+stanzaID: 43939434
+book: Inferno
+canto: 1
+startline: 1
+endline: 12
+unitlenght: 12
+cantolines: 136
+original: ["Nel mezzo del cammin di nostra vita",
+"mi ritrovai per una selva oscura,",
+"ché la diritta via era smarrita.",
+"Ahi quanto a dir qual era è cosa dura",
+"esta selva selvaggia e aspra e forte",
+"che nel pensier rinova la paura!",
+"Tant' è amara che poco è più morte;",
+"ma per trattar del ben ch'i' vi trovai,",
+"dirò de l'altre cose ch'i' v'ho scorte.",
+"Io non so ben ridir com' i' v'intrai,",
+"tant' era pien di sonno a quel punto",
+"che la verace via abbandonai."]
+hollTrans: ["Midway in the journey of our life",
+"I came to myself in a dark wood,",
+"for the straight way was lost.",
+"Ah, how hard it is to tell",
+"the nature of that wood, savage, dense and harsh —",
+"the very thought of it renews my fear!",
+"It is so bitter death is hardly more so.",
+"But to set forth the good I found",
+"I will recount the other things I saw.",
+"How I came there I cannot really tell,",
+"I was so full of sleep",
+"when I forsook the one true way."]
+inMotion: false
+threshold: false
+speaker: false 
+metaphor: false
+location: 0:0
+locationName: Wood
+descriptionType: action
+}
+
+MIMETIC TYPOLOGIES
+Speech (if true)
+	Discourse
+	Description
+	Negotiation
+Description: Being(s)
+	Dante
+	Virgil
+	Souls (Many)
+	Souls (Few: NamedP
+	Souls (Individual)
+	Denizen(Many / New:Named / Individual)
+	Heavenly
+Description: Landmark/Architecture
+Description: Senses
+	Sound/Smell
+Description: Interior
+	Emotion/Fear
+Motion (if true)
+	Descent
+	Ascent
+	RightTurn
+Action
+	Crossing
+	Conflict
+Apostrophe
+Subset: Metaphor
+
+	
+	
+
+	
+
+	
+	
+	
