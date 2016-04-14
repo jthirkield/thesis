@@ -1,6 +1,6 @@
 VERSE OBJECT
 {
-stanzaID: 43939434
+stanzaID: 43939434,
 book: Inferno
 canto: 1
 startline: 1
@@ -37,7 +37,9 @@ speaker: false
 metaphor: false
 location: 0:0
 locationName: Wood
-descriptionType: action
+memeType: action
+memeSubType: walking
+memeDescription: "lost in woods"
 }
 
 MIMETIC TYPOLOGIES
