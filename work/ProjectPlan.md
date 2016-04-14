@@ -5,8 +5,9 @@ Data Structures: JSON Object of Poem divided by marked by location and memetic t
 Total Number of lines: 4420 lines / estimated 1000 objects
 
 
-Frontend platform and libraries: webgl, threejs libraries
-Backend platform: mongodb database server
+Frontend platform and libraries: webgl, Threejs libraries
+
+Backend platform: Mongodb database server
 
 Overall Functionality goals for May 17: A 3D-movable, scalable and interactive map of the Inferno with proper geometric proportions relative to the text. The map should navigate through the text via map locations and populations: including souls, demons, Dante & Virgil, architectural elements, and thresholds. If time allows, the inverse should work too: scrolling through the text navigates through the map. 
 
