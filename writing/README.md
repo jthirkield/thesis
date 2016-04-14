@@ -11,6 +11,6 @@
 *   [Project Plan](https://github.com/jthirkield/thesis/blob/master/work/ProjectPlan.md)
 *   [Data Work](https://github.com/jthirkield/thesis/blob/master/work/DataStructures.txt)
 *   [System Diagram/Data Structures](https://github.com/jthirkield/thesis/blob/master/work/dante_system_diagram.pdf)
-*   [Threejs Prototype](http://floatingmedia.com/threejs/examples/webgl_interactive_points.html)
+*   [Threejs Prototype](http://floatingmedia.com/threejs/examples/webgl_interactive_points3.html)
 *   [Inferno Sketch 1](https://github.com/jthirkield/thesis/blob/master/work/Inferno_Sketch1.pdf)
 *   [Inferno Sketch 2](https://github.com/jthirkield/thesis/blob/master/work/Inferno_Sketch2.pdf)
