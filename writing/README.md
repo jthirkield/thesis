@@ -1,6 +1,7 @@
 # Thesis
 
 ## [Writing](https://github.com/jthirkield/thesis/blob/master/writing/README.md)
+*   [Abstract](https://github.com/jthirkield/thesis/blob/master/writing/outline.md)
 *   [Outline](https://github.com/jthirkield/thesis/blob/master/writing/outline.md)
 *   [Story Map](https://github.com/jthirkield/thesis/blob/master/writing/storymap.md)
 *   [Introduction](https://github.com/jthirkield/thesis/blob/master/writing/ThesisIntroduction3-3.pdfx)
