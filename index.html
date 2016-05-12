@@ -29,25 +29,50 @@
 			#info {
 				position: absolute;
 				bottom: 10%;
-				width: 333px;
+				width: 400px;
 				padding: 5px;
 				margin-left: 33px;
 				opacity: 0.6;
 				font-family: "Arial";
-				font-size: 12px;
+				font-size: 15px;
 				text-align: left;
 				font-weight: normal;
+			}
+		h1 {
+				
+				font-size: 16px;
+				
+				font-family: "Helvetica";
+
+				font-weight: normal;
+
 			}
 			#stanzas {
 				position: absolute;
 				top: 40%;
-				width: 333px;
+				width: 400px;
 				padding: 0px;
 				margin-left: 33px;
-				height: 66px;
+				height: 88px;
 				font-family: "Arial";
-				font-size: 12px;
-				line-height: 19px;
+				font-size: 15px;
+				line-height: 22px;
+				overflow: hidden;
+				text-align: left;
+				font-weight: normal;
+				overflow: auto;
+			}
+		#firstlines {
+				position: absolute;
+				top: 30%;
+				padding: 0px;
+				margin-left: 25%;
+/* 
+				height: 88px;
+ */
+				font-family: "Arial";
+				font-size: 33px;
+				line-height: 60px;
 				overflow: hidden;
 				text-align: left;
 				font-weight: normal;
@@ -75,12 +100,19 @@
 		<div id="container"></div>
 		<div id="stanzas"><p id='now'></p></div>
 		<div id="info"></div>
+		<div id="firstlines">
+		<p>Midway in the journey of our life<BR>
+		I came to myself in a dark wood,<BR>
+		for the straight way was lost.<BR></p>
+		</div>
 
 		<script src="build/three.min.js"></script>
 		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 		<script src="js/Detector.js"></script>
 		<script src="js/libs/stats.min.js"></script>
 		<script src="js/controls/TrackballControls.js"></script>
+				<script src="js/libs/tween.min.js"></script>
+
 
 		<script type="x-shader/x-vertex" id="vertexshader">
 
@@ -1878,7 +1910,7 @@ var eventData = {
     "radiusEnd": 3,
     "radiusStart": -1,
     "ychange": 5,
-    "HSLlightHigh": 0.30,
+    "HSLlightHigh": 0.25,
     "HSLlightLow": 0.10,
     "HSLsat": 1,
     "HSLhue": 0.02,
@@ -2025,6 +2057,90 @@ var eventData = {
     "thetaGapEnd": 0,
     "dotSize": 0.75,
     "dots": 1
+  },{
+    "canto": 12,
+    "lineStart": 13,
+    "lineEnd": 27,
+    "circle": 7,
+    "shortDescript": "The Minotaur",
+    "motion": 1,
+    "threshold": 1,
+    "object": 1,
+    "speech": 0,
+    "objectType": "Demon",
+    "objectNumber": 1,
+    "distribution": "rows",
+    "rows": 1,
+    "radiusEnd": 0,
+    "radiusStart": 0.1,
+    "ychange": 0,
+    "HSLlightHigh": 0.3,
+    "HSLlightLow": 0,
+    "HSLsat": 1,
+    "HSLhue": 0.02,
+    "danteTheta": 2.7,
+    "thetaSpread": 0,
+    "thetaStart": 0.5,
+    "thetaGapStart": 0,
+    "thetaGapEnd": 0,
+    "dotSize": 0.6,
+    "dots": 1
+  },  {
+    "canto": 12,
+    "lineStart": 55,
+    "lineEnd": 66,
+    "circle": 7,
+    "shortDescript": "The Centaurs",
+    "motion": 1,
+    "threshold": 0,
+    "object": 1,
+    "speech": 0,
+    "objectType": "Demons",
+    "objectNumber": "m",
+    "distribution": "scatter",
+    "rows": 2,
+    "radiusEnd": 1,
+    "radiusStart": 1,
+    "ychange": 0,
+    "HSLlightHigh": 0.18,
+    "HSLlightLow": 0.12,
+    "HSLsat": 1,
+    "HSLhue": 0.02,
+    "danteTheta": 6,
+    "thetaSpread": 4,
+    "thetaStart": 1,
+    "thetaGapStart": 0,
+    "thetaGapEnd": 0,
+    "dotSize": 0.5,
+    "dots": 80
+      },{
+    "canto": 12,
+    "lineStart": 115,
+    "lineEnd": 117,
+    "circle": 7,
+    "shortDescript": "River up to their heads",
+    "motion": 0,
+    "threshold": 0,
+    "object": 1,
+    "speech": 0,
+    "objectType": "Souls",
+    "objectNumber": "m",
+    "distribution": "scatter",
+    "rows": 2,
+    "radiusEnd": 3,
+    "radiusStart": 2,
+    "ychange": 0,
+    "HSLlightHigh": 0.15,
+    "HSLlightLow": 0.25,
+    "HSLsat": 0.89,
+    "HSLhue": 0.01,
+    "danteTheta": 1.2,
+    "thetaSpread": 6,
+    "thetaStart": 3,
+    "thetaGapStart": 0,
+    "thetaGapEnd": 0,
+    "dotSize": 0.4,
+    "dots": 97
   }
 
 ]
@@ -2035,7 +2151,9 @@ var eventData = {
 			var transitionwait = false;
 	//Global from tracking story breaks in stanzas || for the dynamic scroll
 		var storyBreaks, currentEpisode;
-	
+	var theOpening = false;
+	var openingObjects = 0;
+	var openingParticle = 0;
 			
 	//threeJS globals		
 			var renderer, scene, controls, camera, stats;			
@@ -2045,6 +2163,9 @@ var eventData = {
 			//var lastStanza = -1;
 			var lastInter;
 			var lightnessArray = [];
+			
+			//rotation var
+			var qa
 			
 			var twelveLines, myLocation;
 			var mouseTrap, stanzaShow;
@@ -2067,8 +2188,15 @@ var eventData = {
 //scene.fog = new THREE.Fog(0xffffff, 10, 60);
    // scene.fog.color.setHSL( 0.51, 0.6, 0.6 );
 				camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 10000 );
-				camera.position.z = 300;
-				camera.position.y = 60;
+// 				camera.position.z = 300;
+// 				camera.position.y = 60;
+ 				camera.position.y = 445;
+ 				camera.position.z = 2.65;
+// //     camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 10000)
+  //camera.position = new THREE.Vector3(0, 60, 300)
+    cameraPos0 = camera.position.clone()
+    cameraUp0 = camera.up.clone()
+    cameraZoom = camera.position.z
 		    camera.setViewOffset(window.innerWidth,window.innerHeight,-150,0,window.innerWidth,window.innerHeight);
 //scene.add(camera);
 
@@ -2093,7 +2221,7 @@ controls = new THREE.TrackballControls( camera );
  var edgeMaterial = new THREE.MeshBasicMaterial( { color: 0x999999, transparent: true, opacity: 0.1, side: THREE.FrontSide } )
   var floorMaterial = new THREE.MeshBasicMaterial( { color: 0x666666, transparent: true, opacity: 0.1, side: THREE.DoubleSide } )
 
-var sDem = [143, 130, 117, 104, 91, 78, 65, 53, 43, 36, 33, 30, 27, 24, 21, 18, 15, 12, 9, 9];
+var sDem = [143, 130, 117, 104, 91, 78, 65, 55, 43, 36, 33, 30, 27, 24, 21, 18, 15, 12, 9, 9];
 var yDem = [70, 64, 58, 52, 44, 36, 30, 10, -29, -32, -35, -38, -41, -44, -47, -50, -53, -70,]
 
 for (u = 0; u < 19; u++) {
@@ -2177,7 +2305,7 @@ CantoTrack.push(dotNum);
 				Lightness -= Lightvar.toFixed(2);
 				}
 					
-					color.setHSL( eventData.features[j].HSLhue, eventData.features[j].HSLsat, Lightness);
+					color.setHSL( eventData.features[j].HSLhue, eventData.features[j].HSLsat, 0);
 					lightnessArray.push(Lightness);
 					///MAKE AN ARRAY FOR LIGHTNESS!!!!
 
@@ -2256,6 +2384,9 @@ CantoTrack.push(dotNum);
 
 				window.addEventListener( 'resize', onWindowResize, false );
 				document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+				
+				
+						
 
 			}
 
@@ -2309,6 +2440,7 @@ function generateTexture() {
 
 				requestAnimationFrame( animate );
 				controls.update();
+			TWEEN.update();
 
 				render();
 				//stats.update();
@@ -2322,7 +2454,30 @@ function generateTexture() {
 				var attributes = geometry.attributes;
 
 				raycaster.setFromCamera( mouse, camera );
+				
+				if (theOpening) {
+				var nowOpening = openingObjects / 20;
+					if (nowOpening % 1 == 0) {
+			for (hh = 0; hh < eventData.features[nowOpening].dots; hh++) {
+						var color = new THREE.Color();
 
+						color.setHSL( eventData.features[nowOpening].HSLhue, eventData.features[nowOpening].HSLsat, lightnessArray[openingParticle] );
+						color.toArray( attributes.customColor.array, openingParticle * 3);
+						openingParticle++;
+						}
+												attributes.customColor.needsUpdate = true;
+				}
+						openingObjects++;
+						//openingObjects.toFixed(2);
+						console.log(openingObjects);
+			if (openingObjects > 600) {
+				theOpening = false;
+				  moveAndLookAt(camera, new THREE.Vector3(0, 60, 350), new THREE.Vector3(0, 0, 0), {duration: 4000});
+
+				}
+				}
+
+//console.log(openingObjects);
 				intersects = raycaster.intersectObject( particles );
 				if ( intersects.length > 0) {
 					//checking for the current intersection
@@ -2439,6 +2594,9 @@ function pullStanzas(group, num) {
 
 }
 $( document ).ready(function() {
+$( "#firstlines" ).fadeOut(7000, function() {
+theOpening = true;
+});
 	$('html').dblclick(function() {
 	if(!transitionwait) {
 	transitionwait = true;
@@ -2449,7 +2607,7 @@ $( document ).ready(function() {
 	controls.enabled = false;
 	readingmode = true;
 //$('#info').animate({top: '506px'}, 1500, 'swing');
-$('#stanzas').animate({top: '10%', height: '66%'}, 1500, 'swing', function() {
+$('#stanzas').animate({top: '10%', height: '70%'}, 1500, 'swing', function() {
     // Animation complete.
     
     
@@ -2592,6 +2750,7 @@ console.log(currentp);
  $( "#stanzas > p" ).filter(function( index ) {
     return index >= lastevent && index <= nextevent;
         }).css("color", "#d1cab1");  
+        
 //  }).css("opacity", "1");
 
   
@@ -2600,6 +2759,45 @@ console.log(currentp);
 //   }).fadeIn(10);
 }
 
+function moveAndLookAt(camera, dstpos, dstlookat, options) {
+  options || (options = {duration: 300});
+
+  var origpos = new THREE.Vector3().copy(camera.position); // original position
+  var origrot = new THREE.Euler().copy(camera.rotation); // original rotation
+
+  camera.position.set(dstpos.x, dstpos.y, dstpos.z);
+  camera.lookAt(dstlookat);
+  var dstrot = new THREE.Euler().copy(camera.rotation)
+
+  // reset original position and rotation
+  camera.position.set(origpos.x, origpos.y, origpos.z);
+  camera.rotation.set(origrot.x, origrot.y, origrot.z);
+
+  //
+  // Tweening
+  //
+  
+  // position
+  new TWEEN.Tween(camera.position).to({
+    x: dstpos.x,
+    y: dstpos.y,
+    z: dstpos.z
+  }, options.duration).start();;
+
+  // rotation (using slerp)
+  (function () {
+	qa = new THREE.Quaternion().copy(camera.quaternion); // src quaternion
+    var qb = new THREE.Quaternion().setFromEuler(dstrot); // dst quaternion
+    var qm = new THREE.Quaternion();
+    camera.quaternion = qm;
+    
+    var o = {t: 0};
+    new TWEEN.Tween(o).to({t: 1}, options.duration).onUpdate(function () {
+      THREE.Quaternion.slerp(qa, qb, qm, o.t);
+      camera.quaternion.set(qm.x, qm.y, qm.z, qm.w);
+    }).start();
+  }).call(this);
+}
 
 
 		</script>
