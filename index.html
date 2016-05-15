@@ -4,7 +4,7 @@
 		<title>INFERNO MAP</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-		<style>
+<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed|Open+Sans|Lato|PT+Sans|Source+Sans+Pro' rel='stylesheet' type='text/css'>		<style>
 		html {
     overflow: scroll;
     overflow-x: hidden;
@@ -33,7 +33,7 @@
 				padding: 5px;
 				margin-left: 33px;
 				opacity: 0.6;
-				font-family: "Arial";
+font-family: 'Source Sans Pro', sans-serif;
 				font-size: 15px;
 				text-align: left;
 				font-weight: normal;
@@ -54,7 +54,7 @@
 				padding: 0px;
 				margin-left: 33px;
 				height: 88px;
-				font-family: "Arial";
+font-family: 'Source Sans Pro', sans-serif;
 				font-size: 15px;
 				line-height: 22px;
 				overflow: hidden;
@@ -70,7 +70,7 @@
 /* 
 				height: 88px;
  */
-				font-family: "Arial";
+font-family: 'Source Sans Pro', sans-serif;
 				font-size: 33px;
 				line-height: 60px;
 				overflow: hidden;
@@ -93,10 +93,12 @@
 				color: #fff;
 			}
 		</style>
+		<script>
+		var theCantos;
+		</script>
 	</head>
 
 	<body>
-		<div id="container"></div>
 		<div id="container"></div>
 		<div id="stanzas"><p id='now'></p></div>
 		<div id="info"></div>
@@ -112,6 +114,7 @@
 		<script src="js/libs/stats.min.js"></script>
 		<script src="js/controls/TrackballControls.js"></script>
 				<script src="js/libs/tween.min.js"></script>
+				<script src="cantos.js"></script>
 
 
 		<script type="x-shader/x-vertex" id="vertexshader">
@@ -158,2014 +161,102 @@
 		<script>
 
 			if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
-//eventData.features[0].HSLhue
-var theCantos = [[],[],[],["THROUGH ME THE WAY TO THE CITY OF WOE,",
-"THROUGH ME THE WAY TO EVERLASTING PAIN,",
-"THROUGH ME THE WAY AMONG THE LOST.",
-"JUSTICE MOVED MY MAKER ON HIGH.",
-"DIVINE POWER MADE ME,",
-"WISDOM SUPREME, AND PRIMAL LOVE.",
-"BEFORE ME NOTHING WAS BUT THINGS ETERNAL,",
-"AND ETERNAL I ENDURE.",
-"ABANDON ALL HOPE, YOU WHO ENTER HERE.",
-"These words, dark in hue, I saw inscribed",
-"over an archway. And then I said:",
-"'Master, for me their meaning is hard.'",
-"And he, as one who understood:",
-"'Here you must banish all distrust,",
-"here must all cowardice be slain.",
-"'We have come to where I said",
-"you would see the miserable sinners",
-"who have lost the good of the intellect.'",
-"And after he had put his hand on mine",
-"with a reassuring look that gave me comfort,",
-"he led me toward things unknown to man.",
-"Now sighs, loud wailing, lamentation",
-"resounded through the starless air,",
-"so that I too began to weep.",
-"Unfamiliar tongues, horrendous accents,",
-"words of suffering, cries of rage, voices",
-"loud and faint, the sound of slapping hands —",
-"all these made a tumult, always whirling",
-"in that black and timeless air,",
-"as sand is swirled in a whirlwind.",
-"And I, my head encircled by error, said:",
-"'Master, what is this I hear, and what people",
-"are these so overcome by pain?'",
-"And he to me: 'This miserable state is borne",
-"by the wretched souls of those who lived",
-"without disgrace yet without praise.",
-"'They intermingle with that wicked band",
-"of angels, not rebellious and not faithful",
-"to God, who held themselves apart.",
-"'Loath to impair its beauty, Heaven casts them out,",
-"and the depth of Hell does not receive them",
-"lest on their account the evil angels gloat.'",
-"And I: 'Master, what is so grievous to them,",
-"that they lament so bitterly?'",
-"He replied: 'I can tell you in few words.",
-"'They have no hope of death,",
-"and their blind life is so abject",
-"that they are envious of every other lot.",
-"'The world does not permit report of them.",
-"Mercy and justice hold them in contempt.",
-"Let us not speak of them — look and pass by.'",
-"And I, all eyes, saw a whirling banner",
-"that ran so fast it seemed as though",
-"it never could find rest.",
-"Behind it came so long a file of people",
-"that I could not believe",
-"death had undone so many.",
-"After I recognized a few of these,",
-"I saw and knew the shade of him",
-"who, through cowardice, made the great refusal.",
-"At once with certainty I understood",
-"this was that worthless crew",
-"hateful alike to God and to His foes.",
-"These wretches, who never were alive,",
-"were naked and beset",
-"by stinging flies and wasps",
-"that made their faces stream with blood,",
-"which, mingled with their tears,",
-"was gathered at their feet by loathsome worms.",
-"And then, fixing my gaze farther on,",
-"I saw souls standing on the shore of a wide river,",
-"and so I said: 'Master, permit me first",
-"'to know who they are and then what inner law",
-"makes them so eager for the crossing,",
-"or so they seem in this dim light.'",
-"And he to me: 'You shall know these things,",
-"but not before we stay our steps",
-"on the mournful shore of Acheron.'",
-"Then, my eyes cast down with shame,",
-"fearing my words displeased him,",
-"I did not speak until we reached that stream.",
-"And now, coming toward us in a boat,",
-"an old man, his hair white with age, cried out:",
-"'Woe unto you, you wicked souls,",
-"'give up all hope of ever seeing Heaven.",
-"I come to take you to the other shore,",
-"into eternal darkness, into heat and chill.",
-"'And you there, you living soul,",
-"move aside from these now dead.'",
-"But when he saw I did not move,",
-"he said: 'By another way, another port,",
-"not here, you'll come to shore and cross.",
-"A lighter ship must carry you.'",
-"And my leader: 'Charon, do not torment yourself.",
-"It is so willed where will and power are one,",
-"and ask no more.'",
-"That stilled the shaggy jowls",
-"of the pilot of the livid marsh,",
-"about whose eyes burned wheels of flame.",
-"But those souls, naked and desolate,",
-"lost their color. With chattering teeth",
-"they heard his brutal words.",
-"They blasphemed God, their parents,",
-"the human race, the place, the time, the seed",
-"of their begetting and their birth.",
-"Then, weeping bitterly, they drew together",
-"to the accursed shore that waits",
-"for every man who fears not God.",
-"Charon the demon, with eyes of glowing coals,",
-"beckons to them, herds them all aboard,",
-"striking anyone who slackens with his oar.",
-"Just as in autumn the leaves fall away,",
-"one, and then another, until the bough",
-"sees all its spoil upon the ground,",
-"so the wicked seed of Adam fling themselves",
-"one by one from shore, at his signal,",
-"as does a falcon at its summons.",
-"Thus they depart over dark water,",
-"and before they have landed on the other side",
-"another crowd has gathered on this shore.",
-"'My son,' said the courteous master,",
-"'all those who die in the wrath of God",
-"assemble here from every land.",
-"'And they are eager to cross the river,",
-"for the justice of God so spurs them on",
-"their very fear is turned to longing.",
-"'No good soul ever crosses at this place.",
-"Thus, if Charon complains on your account,",
-"now you can grasp the meaning of his words.'",
-"When he had ended, the gloomy plain shook",
-"with such force, the memory of my terror",
-"makes me again break out in sweat.",
-"From the weeping ground there sprang a wind,",
-"flaming with vermilion light,",
-"which overmastered all my senses,",
-"and I dropped like a man pulled down by sleep."],
-["A heavy thunderclap broke my deep sleep",
-"so that I started up like one",
-"shaken awake by force.",
-"With rested eyes, I stood",
-"and looked about me, then fixed my gaze",
-"to make out where I was.",
-"I found myself upon the brink",
-"of an abyss of suffering",
-"filled with the roar of endless woe.",
-"It was full of vapor, dark and deep.",
-"Straining my eyes toward the bottom,",
-"I could see nothing.",
-"'Now let us descend into the blind world",
-"down there,' began the poet, gone pale.",
-"'I will be first and you come after.'",
-"And I, noting his pallor, said:",
-"'How shall I come if you're afraid,",
-"you, who give me comfort when I falter?'",
-"And he to me: 'The anguish of the souls",
-"below us paints my face",
-"with pity you mistake for fear.",
-"'Let us go, for the long road calls us.'",
-"Thus he went first and had me enter",
-"the first circle girding the abyss.",
-"Here, as far as I could tell by listening,",
-"was no lamentation other than the sighs",
-"that kept the air forever trembling.",
-"These came from grief without torment",
-"borne by vast crowds",
-"of men, and women, and little children.",
-"My master began: 'You do not ask about",
-"the souls you see? I want you to know,",
-"before you venture farther,",
-"'they did not sin. Though they have merit,",
-"that is not enough, for they were unbaptized,",
-"denied the gateway to the faith that you profess.",
-"'And if they lived before the Christians lived,",
-"they did not worship God aright.",
-"And among these I am one.",
-"'For such defects, and for no other fault,",
-"we are lost, and afflicted but in this,",
-"that without hope we live in longing.'",
-"When I understood, great sadness seized my heart,",
-"for then I knew that beings of great worth",
-"were here suspended in this Limbo.",
-"'Tell me, master, tell me, sir,' I began,",
-"seeking assurance in the faith",
-"that conquers every doubt,",
-"'did ever anyone, either by his own",
-"or by another's merit, go forth from here",
-"and rise to blessedness?'",
-"And he, who understood my covert speech:",
-"'I was new to this condition when I saw",
-"a mighty one descend, crowned, with the sign of victory.",
-"'Out of our midst he plucked the shade",
-"of our first parent, of Abel his son, of Noah,",
-"and of Moses, obedient in giving laws,",
-"'the patriarch Abraham, and David the king,",
-"Israel with his father and his sons,",
-"and with Rachel, for whom he served so long,",
-"'as well as many others, and he made them blessed.",
-"And, I would have you know, before these",
-"no human souls were saved.'",
-"We did not halt our movement as he spoke,",
-"but all the while were passing through a wood —",
-"I mean a wood of thronging spirits.",
-"We had not yet gone far from where I'd slept",
-"when I beheld a blaze of light",
-"that overcame a hemisphere of darkness,",
-"though still a good way from it,",
-"yet not so far but I discerned",
-"an honorable company was gathered there.",
-"'O you who honor art and knowledge,",
-"why are these so honored they are set",
-"apart from the condition of the rest?'",
-"And he answered: 'Their honorable fame,",
-"which echoes in your life above,",
-"gains favor in Heaven, which thus advances them.'",
-"Just then I heard a voice that said:",
-"'Honor the loftiest of poets!",
-"His shade returns that had gone forth.'",
-"When the voice had paused and there was silence,",
-"I saw four worthy shades approach,",
-"their countenances neither sad nor joyful.",
-"The good master spoke: 'Take note",
-"of him who holds that sword in hand",
-"and comes as lord before the three:",
-"'He is Homer, sovereign poet.",
-"Next comes Horace the satirist,",
-"Ovid is third, the last is Lucan.",
-"'Since each is joined to me",
-"in the name the one voice uttered,",
-"they do me honor and, doing so, do well.'",
-"There I saw assembled the fair school",
-"of the lord of loftiest song,",
-"soaring like an eagle far above the rest.",
-"After they conversed a while,",
-"they turned to me with signs of greeting,",
-"and my master smiled at this.",
-"And then they showed me greater honor still,",
-"for they made me one of their company,",
-"so that I became the sixth amidst such wisdom.",
-"Thus we went onward to the light,",
-"speaking of things that here are best unsaid,",
-"just as there it was fitting to express them.",
-"We came to the foot of a noble castle,",
-"encircled seven times by towering walls,",
-"defended round about by a fair stream.",
-"Over this stream we moved as on dry land.",
-"Through seven gates I entered with these sages",
-"until we came to a fresh, green meadow.",
-"People were there with grave, slow-moving eyes",
-"and visages of great authority.",
-"They seldom spoke, and then in gentle tones.",
-"When we withdrew over to one side",
-"into an open space, high in the light,",
-"we could observe them all.",
-"There before me on the enameled green",
-"the great spirits were revealed.",
-"In my heart I exult at what I saw.",
-"I saw Electra with many of her line,",
-"of whom I recognized Hector, Aeneas,",
-"and Caesar, in arms, with his falcon eyes.",
-"I saw Camilla and Penthesilea.",
-"Seated apart I saw King Latinus,",
-"and next to him Lavinia, his daughter.",
-"I saw that Brutus who drove out Tarquinius,",
-"Lucretia, Julia, Marcia, and Cornelia.",
-"And Saladin I saw, alone, apart.",
-"When I raised my eyes a little higher,",
-"I saw the master of those who know,",
-"sitting among his philosophic kindred.",
-"Eyes trained on him, all show him honor.",
-"In front of all the rest and nearest him",
-"I saw Socrates and Plato.",
-"I saw Democritus, who ascribes the world",
-"to chance, Diogenes, Anaxagoras, and Thales,",
-"Empedocles, Heraclitus, and Zeno.",
-"I saw the skilled collector of the qualities",
-"of things — I mean Dioscorides — and I saw",
-"Orpheus, Cicero, Linus, and moral Seneca,",
-"Euclid the geometer, and Ptolemy,",
-"Hippocrates, Avicenna, Galen,",
-"and Averroes, who wrote the weighty glosses.",
-"I cannot give account of all of them,",
-"for the length of my theme so drives me on",
-"that often the telling comes short of the fact.",
-"The company of six falls off to two",
-"and my wise leader brings me by another way",
-"out of the still, into the trembling, air.",
-"And I come to a place where nothing shines."],["Thus I descended from the first circle",
-"down into the second, which girds a smaller space",
-"but greater agony to goad lament.",
-"There stands Minos, snarling, terrible.",
-"He examines each offender at the entrance,",
-"judges and dispatches as he encoils himself.",
-"I mean that when the ill-begotten soul",
-"stands there before him it confesses all,",
-"and that accomplished judge of sins",
-"decides what place in Hell is fit for it,",
-"then coils his tail around himself to count",
-"how many circles down the soul must go.",
-"Always before him stands a crowd of them,",
-"going to judgment each in turn.",
-"They tell, they hear, and then are hurled down.",
-"'O you who come to this abode of pain,'",
-"said Minos when he saw me, pausing",
-"in the exercise of his high office,",
-"'beware how you come in and whom you trust.",
-"Don't let the easy entrance fool you.'",
-"And my leader to him: 'Why all this shouting?",
-"'Hinder not his destined journey.",
-"It is so willed where will and power are one,",
-"and ask no more.'",
-"Now I can hear the screams",
-"of agony. Now I have come",
-"where a great wailing beats upon me.",
-"I reached a place mute of all light,",
-"which bellows as the sea in tempest",
-"tossed by conflicting winds.",
-"The hellish squall, which never rests,",
-"sweeps spirits in its headlong rush,",
-"tormenting, whirls and strikes them.",
-"Caught in that path of violence,",
-"they shriek, weep, and lament.",
-"Then how they curse the power of God!",
-"I understood that to such torment",
-"the carnal sinners are condemned,",
-"they who make reason subject to desire.",
-"As, in cold weather, the wings of starlings",
-"bear them up in wide, dense flocks,",
-"so does that blast propel the wicked spirits.",
-"Here and there, down and up, it drives them.",
-"Never are they comforted by hope",
-"of rest or even lesser punishment.",
-"Just as cranes chant their mournful songs,",
-"making a long line in the air,",
-"thus I saw approach, heaving plaintive sighs,",
-"shades lifted on that turbulence,",
-"so that I said: 'Master, who are these",
-"whom the black air lashes?'",
-"'The first of them about whom",
-"you would hear,' he then replied,",
-"'was empress over many tongues.",
-"'She was so given to the vice of lechery",
-"she made lust licit in her law",
-"to take away the blame she had incurred.",
-"'She is Semiramis, of whom we read",
-"that she, once Ninus' wife, succeeded him.",
-"She held sway in the land the Sultan rules.",
-"'Here is she who broke faith with the ashes",
-"of Sichaeus and slew herself for love.",
-"The next is wanton Cleopatra.",
-"'See Helen, for whose sake so many years",
-"of ill rolled past. And see the great Achilles,",
-"who battled, at the last, with love.",
-"'See Paris, Tristan,' and he showed me more",
-"than a thousand shades, naming as he pointed,",
-"whom love had parted from our life.",
-"When I heard my teacher name the ladies",
-"and the knights of old, pity overcame me",
-"and I almost lost my senses.",
-"I began: 'Poet, gladly would I speak",
-"with these two that move together",
-"and seem to be so light upon the wind.'",
-"And he: 'Once they are nearer, you will see:",
-"if you entreat them by the love",
-"that leads them, they will come.'",
-"As soon as the wind had bent them to us,",
-"I raised my voice: 'O wearied souls,",
-"if it is not forbidden, come speak with us.'",
-"As doves, summoned by desire, their wings",
-"outstretched and motionless, move on the air,",
-"borne by their will to the sweet nest,",
-"so did these leave the troop where Dido is,",
-"coming to us through the malignant air,",
-"such force had my affectionate call.",
-"'O living creature, gracious and kind,",
-"that come through somber air to visit us",
-"who stained the world with blood,",
-"'if the King of the universe were our friend",
-"we would pray that He might give you peace,",
-"since you show pity for our grievous plight.",
-"'We long to hear and speak of that",
-"which you desire to speak and know,",
-"here, while the wind has calmed.",
-"'On that shore where the river Po",
-"with all its tributaries slows",
-"to peaceful flow, there I was born.",
-"'Love, quick to kindle in the gentle heart,",
-"seized this man with the fair form taken from me.",
-"The way of it afflicts me still.",
-"'Love, which absolves no one beloved from loving,",
-"seized me so strongly with his charm that,",
-"as you see, it has not left me yet.",
-"'Love brought us to one death.",
-"Caena waits for him who quenched our lives.'",
-"These words were borne from them to us.",
-"And when I heard two those afflicted souls",
-"I bowed my head and held it low until at last",
-"the poet said: 'What are your thoughts?'",
-"In answer I replied: 'Oh,",
-"how many sweet thoughts, what great desire,",
-"have brought them to this woeful pass!'",
-"Then I turned to them again to speak",
-"and I began: 'Francesca, your torments",
-"make me weep for grief and pity,",
-"'but tell me, in that season of sweet sighs,",
-"how and by what signs did Love",
-"acquaint you with your hesitant desires?'",
-"And she to me: 'There is no greater sorrow",
-"than to recall our time of joy",
-"in wretchedness — and this your teacher knows.",
-"'But if you feel such longing",
-"to know the first root of our love,",
-"I shall tell as one who weeps in telling.",
-"'One day, to pass the time in pleasure,",
-"we read of Lancelot, how love enthralled him.",
-"We were alone, without the least misgiving.",
-"'More than once that reading made our eyes meet",
-"and drained the color from our faces.",
-"Still, it was a single instant overcame us:",
-"'When we read how the longed-for smile",
-"was kissed by so renowned a lover, this man,",
-"who never shall be parted from me,",
-"'all trembling, kissed me on my mouth.",
-"A Galeotto was the book and he that wrote it.",
-"That day we read in it no further.'",
-"While the one spirit said this",
-"the other wept, so that for pity",
-"I swooned as if in death.",
-"And down I fell as a dead body falls."],["With my returning senses that had failed",
-"at the piteous state of those two kindred,",
-"which had confounded me with grief,",
-"new torments and new souls in torment",
-"I see about me, wherever I may move,",
-"or turn, or set my gaze.",
-"I am in the third circle, of eternal,",
-"hateful rain, cold and leaden,",
-"changeless in its monotony.",
-"Heavy hailstones, filthy water, and snow",
-"pour down through gloomy air.",
-"The ground it falls on reeks.",
-"Cerberus, fierce and monstrous beast,",
-"barks from three gullets like a dog",
-"over the people underneath that muck.",
-"His eyes are red, his beard a greasy black,",
-"his belly swollen. With his taloned hands",
-"he claws the spirits, flays and quarters them.",
-"The rain makes them howl like dogs.",
-"The unholy wretches often turn their bodies,",
-"making of one side a shield for the other.",
-"When Cerberus — that huge worm — noticed us,",
-"he opened up his jaws and showed his fangs.",
-"There was no part of him he held in check.",
-"But then my leader spread his hands,",
-"picked up some earth, and with full fists",
-"tossed soil into the ravenous gullets.",
-"As the dog that yelps with craving",
-"grows quiet while it chews its food,",
-"absorbed in trying to devour it,",
-"the foul heads of that demon Cerberus were stilled,",
-"who otherwise so thunders on the souls",
-"they would as soon be deaf.",
-"We were passing over shades sprawled",
-"under heavy rain, setting our feet",
-"upon their emptiness, which seems real bodies.",
-"All of them were lying on the ground,",
-"except for one who sat bolt upright",
-"when he saw us pass before him.",
-"'O you who come escorted through this Hell,'",
-"he said, 'if you can, bring me back to mind.",
-"You were made before I was undone.'",
-"And I to him: 'The punishment you suffer",
-"may be blotting you from memory:",
-"it doesn't seem to me I've ever seen you.",
-"'But tell me who you are to have been put",
-"into this misery with such a penalty",
-"that none, though harsher, is more loathsome.'",
-"And he to me: 'Your city, so full of envy",
-"that now the sack spills over,",
-"held me in its confines in the sunlit life.",
-"'You my townsmen called me Ciacco.",
-"For the pernicious fault of gluttony,",
-"as you can see, I'm prostrate in this rain.",
-"'And in my misery I am not alone.",
-"All those here share a single penalty",
-"for the same fault.' He said no more.",
-"I answered him: 'Ciacco, your distress so weighs",
-"on me it bids me weep. But tell me,",
-"if you can, what shall be the fate",
-"'of the citizens within the riven city?",
-"Are any in it just? And tell me why",
-"such discord has assailed it.'",
-"And he to me: 'After long feuding",
-"they shall come to blood. The rustic faction,",
-"having done great harm, shall drive the others out.",
-"'But it in turn must fall to them,",
-"within three years, by power of him",
-"who now just bides his time.",
-"'These in their arrogance will long subject",
-"the other faction to their heavy yoke,",
-"despite its weeping and its shame.",
-"'Two men are just and are not heeded there.",
-"Pride, envy, and avarice are the sparks",
-"that have set the hearts of all on fire.'",
-"With that he ended his distressing words.",
-"And I to him: 'I wish you would instruct me more,",
-"granting me the gift of further speech.",
-"'Farinata and Tegghiaio, who were so worthy,",
-"Jacopo Rusticucci, Arrigo, and Mosca,",
-"and the rest whose minds were bent on doing good,",
-"'tell me where they are and how they fare.",
-"For great desire presses me to learn",
-"whether Heaven sweetens or Hell embitters them.'",
-"And he: 'They are among the blacker souls.",
-"Different vices weigh them toward the bottom,",
-"as you shall see if you descend that far.",
-"'But when you have returned to the sweet world",
-"I pray you bring me to men's memory.",
-"I say no more nor answer you again.'",
-"With that his clear eyes lost their focus.",
-"He gazed at me until his head drooped down.",
-"Then he fell back among his blind companions.",
-"And my leader said: 'He wakes no more",
-"until angelic trumpets sound",
-"the advent of the hostile Power.",
-"'Then each shall find again his miserable tomb,",
-"shall take again his flesh and form,",
-"and hear the judgment that eternally resounds.'",
-"So we passed on through the foul mix",
-"of shades and rain with lagging steps,",
-"touching a little on the life to come.",
-"'Master,' I asked, 'after the great Judgment",
-"will these torments be greater, less,",
-"or will they stay as harsh as they are now?'",
-"And he replied: 'Return to your science,",
-"which has it that, in measure of a thing's perfection,",
-"it feels both more of pleasure and of pain.",
-"'Although these accursèd people",
-"will never come to true perfection,",
-"they will be nearer it than they are now.'",
-"We went along that curving road,",
-"with much more talk than I repeat,",
-"and reached the point of our descent.",
-"And there we came on Plutus, our great foe."],
-["<i>'Pape Satàn, Pape Satàn, aleppe!'</i>",
-"burst out Plutus in his raucous voice.",
-"And the courteous, all-discerning sage,",
-"to comfort me, said: 'Do not be overcome",
-"by fear. However powerful he may be,",
-"he'll not prevent our climbing down this cliff.'",
-"Then he turned to that bloated face",
-"and said: 'Silence, accursèd wolf!",
-"Let your fury feed itself inside you.",
-"'Not without sanction is this journey down the pit.",
-"It is willed on high, where Michael",
-"did avenge the proud rebellion.'",
-"As sails, swollen by the wind,",
-"fall in a tangle when the mainmast snaps,",
-"so fell that cruel beast to the ground.",
-"Into the fourth hollow we made our way,",
-"descending the dismal slope",
-"that crams in all the evil of the universe.",
-"Ah, Justice of God, who heaps up",
-"such strange punishment and pain as I saw there?",
-"And why do our sins so waste us?",
-"Just as the waves clash above Charybdis,",
-"one breaking on the other when they meet,",
-"so here the souls move in their necessary dance.",
-"Here the sinners were more numerous than elsewhere,",
-"and they, with great shouts, from opposite sides",
-"were shoving burdens forward with their chests.",
-"They crashed into each other, turned",
-"and beat retreat, shoving their loads and shouting:",
-"'Why do you hoard?' or 'Why do you squander?'",
-"Thus they proceeded in their dismal round",
-"on both sides toward the opposite point,",
-"taunting each other with the same refrain.",
-"Once at that point, each group turned back",
-"along its semi-circle to the next encounter.",
-"And I, my heart pierced almost through,",
-"said: 'Master, now explain to me",
-"who these people are. Were those with tonsured heads,",
-"the ones there to our left, all clerics?'",
-"'All of them had such squinting minds",
-"in their first lives,' he said,",
-"'they kept no measure in their spending.",
-"'Their voices howl this clear enough",
-"just as they reach the twin points on the circle",
-"where opposing sins divide them.",
-"'These were clerics who have no lid of hair",
-"upon their heads, and popes and cardinals,",
-"in whom avarice achieves its excess.'",
-"And I: 'Master, in such a crew as this",
-"I ought to recognize at least a few",
-"who were befouled with these offenses.'",
-"And he to me: 'You muster an empty thought.",
-"The undiscerning life that made them foul",
-"now makes them hard to recognize.",
-"'The two groups will collide forever.",
-"These will rise from the grave",
-"with fists tight, these with hair cropped.",
-"'Ill-giving and ill-keeping have stolen",
-"the fair world from them and set them to this scuffle.",
-"As for that, I prettify no words for it.",
-"'Now you see, my son, what brief mockery",
-"Fortune makes of goods we trust her with,",
-"for which the race of men embroil themselves.",
-"'All the gold that lies beneath the moon,",
-"or ever did, could never give a moment's rest",
-"to any of these wearied souls.'",
-"'Master,' I said, 'tell me more: this Fortune",
-"whom you mention, who is she that holds",
-"the world's possessions tightly in her clutches?'",
-"And he to me: 'O foolish creatures,",
-"what great ignorance besets you!",
-"I'll have you feed upon my judgment of her:",
-"'He whose wisdom transcends all",
-"made the heavens and gave them guides,",
-"so that all parts reflect on every part",
-"'in equal distribution of the light. Just so,",
-"He ordained for worldly splendors",
-"a general minister and guide",
-"'who shifts those worthless goods, from time to time,",
-"from race to race, from one blood to another",
-"beyond the intervention of human wit.",
-"'One people comes to rule, another languishes,",
-"in keeping with her judgment,",
-"as secret as a serpent hidden in the grass.",
-"'Your wisdom cannot stand against her.",
-"She foresees, she judges, she maintains her reign,",
-"as do the other heavenly powers.",
-"'Her mutability admits no rest.",
-"Necessity compels her to be swift,",
-"and frequent are the changes in men's state.",
-"'She is reviled by the very ones",
-"who most should praise her,",
-"blaming and defaming her unjustly.",
-"'But she is blessed and does not hear them.",
-"Happy with the other primal creatures,",
-"she turns her sphere, rejoicing in her bliss.",
-"'Now we must descend to greater anguish.",
-"For every star that rose when I set out",
-"is sinking now — and we must not linger here.'",
-"We crossed the circle to the other bank,",
-"beside a spring that bubbles up and flows",
-"into a channel it makes for itself.",
-"The water was darker than the deepest purple.",
-"Accompanied by its murky waves",
-"we began our strange descent.",
-"This dreary stream, once it has reached",
-"these malignant, ashen slopes,",
-"drains out into the swamp called Styx.",
-"And I, my gaze transfixed, could see",
-"people with angry faces in that bog,",
-"naked, their bodies smeared with mud.",
-"They struck each other with their hands,",
-"their heads, their chests and feet,",
-"and tore each other with their teeth.",
-"The good master said: 'Son, now you see",
-"the souls of those whom anger overcame.",
-"And I would have you know for certain",
-"'that plunged beneath these waters,",
-"as your eyes will tell you, are souls whose sighs",
-"with bubbles make the water's surface seethe.",
-"'Fixed in the slime they say: 'We were sullen'",
-"in the sweet air that in the sun rejoices,",
-"filled as we were with slothful fumes.",
-"''Now we are sullen in black mire.'",
-"This hymn they gurgle in their gullets,",
-"for they cannot get a word out whole.'",
-"Thus we made our circle round that filthy bog,",
-"keeping between the bank and swamp,",
-"fixing our gaze on those who swallow mud.",
-"And we came to the foot of a tower at last."],["To continue, let me say that long before",
-"we reached the foot of that high tower",
-"our eyes had noted at its top",
-"two flaming lights displayed up there",
-"to which another, so far off the eye",
-"could hardly make it out, sent back a signal.",
-"And turning to that sea of wisdom, I asked:",
-"'What does this mean? And that other fire,",
-"what does it answer? And who are they who made it?'",
-"And he to me: 'Over the filthy waves",
-"you may already glimpse what is to come,",
-"if the marsh-fumes do not hide it from you.'",
-"Never did a bowstring loose an arrow",
-"that whipped away more swiftly through the air",
-"than, even as I watched, a skiff came skimming",
-"straight toward us on the water,",
-"under the guidance of a single helmsman,",
-"crying: 'Now you are caught, damned spirit!'",
-"'Phlegyas, Phlegyas, this time you shout in vain,'",
-"replied my lord. 'You'll not have us any longer",
-"than it takes to cross this bog.'",
-"Like one who learns of a deceitful plot",
-"that has been hatched against him and begins to fret,",
-"such was Phlegyas in his stifled wrath.",
-"My leader stepped into the boat,",
-"and had me follow after.",
-"And only then did it seem laden.",
-"As soon as he and I were in the bark",
-"the ancient prow moves off, cutting deeper",
-"through the water than when it carries souls.",
-"While we crossed the stagnant swamp",
-"one cloaked in mud rose up to say:",
-"'Who are you that you come before your time?'",
-"And I to him: 'If I come, I do not stay.",
-"But you, who are you, now become so foul?'",
-"He answered: 'As you can see, I am one who weeps.'",
-"And I to him: 'In weeping and in misery,",
-"accursèd spirit, may you stay.",
-"I know you, for all your filth.'",
-"When he stretched both his hands toward the boat,",
-"the wary master thrust him off, saying:",
-"'Away there with the other dogs!'",
-"Then my master put his arms around my neck,",
-"kissed my face and said: 'Indignant soul,",
-"blessed is she that bore you in her womb!",
-"'In the world this man was full of arrogance.",
-"Not one good deed adorns his memory.",
-"That is why his shade is so enraged.",
-"'How many now above who think themselves",
-"great kings will lie here in the mud, like swine,",
-"leaving behind nothing but ill repute!'",
-"And I: 'Master, I would be most eager",
-"to see him pushed deep down into this soup",
-"before we leave the lake.'",
-"And he to me: 'Before the shore",
-"comes into view you'll have your satisfaction.",
-"Your wish deserves to be fulfilled.'",
-"Soon I watched him get so torn to pieces",
-"by the muddy crew, I still give praise",
-"and thanks to God for it.",
-"All cried: 'Get Filippo Argenti!'",
-"And that spiteful Florentine spirit",
-"gnawed at himself with his own teeth.",
-"Of him I say no more. Then we moved on,",
-"when such a sound of mourning struck my ears",
-"I opened my eyes wide to look ahead.",
-"The good master said: 'Now, my son,",
-"we approach the city known as Dis,",
-"with its vast army and its burdened citizens.'",
-"And I: 'Master, I can clearly see its mosques",
-"within the ramparts, glowing red",
-"as if they'd just been taken from the fire.'",
-"And he to me: 'The eternal fire",
-"that burns inside them here in nether Hell",
-"makes them show red, as you can see.'",
-"At last we reached the moats",
-"dug deep around the dismal city.",
-"Its walls seemed made of iron.",
-"Not until we'd made a wide approach",
-"did we come to a place where the boatman bellowed:",
-"'Out with you here, this is the entrance.'",
-"At the threshold I saw more than a thousand angels",
-"fallen from Heaven. Angrily they shouted:",
-"'Who is this, who is not dead,",
-"'yet passes through the kingdom of the dead?'",
-"At this my prudent master made a sign",
-"that he would speak with them apart.",
-"Then they reined in their great disdain",
-"enough to say: 'You come — alone. Let him be gone,",
-"who has so boldly made his way into this kingdom.",
-"'Let him retrace his reckless path alone —",
-"let him see if he can, for you shall stay,",
-"you who have led him through this gloomy realm.'",
-"Reader, how could I not lose heart",
-"at the sound of these accursèd words,",
-"for I thought I would never make it back.",
-"'O my dear leader, who seven times and more",
-"have braced my confidence and rescued me",
-"from the grave dangers that assailed me,",
-"'do not leave me,' I cried, 'helpless now!",
-"If going farther is denied us,",
-"let us at once retrace our steps.'",
-"But the mentor who had brought me there replied:",
-"'Have no fear. None can prevent our passage,",
-"so great a power granted it to us.",
-"'Wait for me here. Comfort your weary spirit",
-"and feed it with good hope.",
-"I will not forsake you in the nether world.'",
-"He goes away and leaves me there,",
-"my gentle father, and I remain in doubt,",
-"'yes' and 'no' at war within my mind.",
-"I could not hear what he proposed,",
-"but it was not long he stayed with them",
-"before they pushed and scrambled back inside.",
-"Then our adversaries slammed shut the gates",
-"against my master, who, left outside,",
-"came back to me with halting steps.",
-"He had his eyes upon the ground, his brows",
-"shorn of all confidence. Sighing, he muttered:",
-"'Who dares deny me access to the realm of pain?'",
-"To me he said: 'Be not dismayed",
-"at my vexation. In this contest I'll prevail,",
-"whatever they contrive to keep us out.",
-"'This insolence of theirs is nothing new:",
-"they showed it once before, at another gate.",
-"It still stands open without lock or bolt.",
-"'Over it you saw the deadly writing.",
-"Even now, making his unescorted way",
-"down through the circles, one descends",
-"by whom the city shall be opened.'"],
-["The pallor cowardice painted on my face",
-"when I saw my leader turning back",
-"made him hasten to compose his features.",
-"He stopped, like a man intent on listening,",
-"for the eye could not probe far",
-"through that dim air and murky fog.",
-"'Yet we must win this fight,' he began,",
-"'or else . . . . Such help was promised us.",
-"How long it seems to me till someone comes!'",
-"I clearly saw that he had covered up",
-"his first words with the others that came after,",
-"words so different in meaning.",
-"Still, I was filled with fear by what he said.",
-"Perhaps I understood his broken phrase",
-"to hold worse meaning than it did.",
-"'Does ever anyone from the first circle,",
-"where the only penalty is hope cut off,",
-"descend so deep into this dismal pit?'",
-"I put this question and he answered:",
-"'It seldom happens that a soul from Limbo",
-"undertakes the journey I am on.",
-"'It is true I came here once before,",
-"conjured by pitiless Erichtho,",
-"who could call shades back into their bodies.",
-"'I had not long been naked of my flesh",
-"when she compelled me to go inside this wall",
-"to fetch a spirit from the circle of Judas.",
-"'That is the lowest place, the darkest,",
-"and farthest from the heaven that encircles all.",
-"Well do I know the way — so have no fear.",
-"'This swamp, which belches forth such noxious stench,",
-"hems in the woeful city, encircling it.",
-"Now we cannot enter without wrath.'",
-"And he said more, but I do not remember,",
-"for my eyes and thoughts were drawn",
-"to the high tower's blazing peak",
-"where all at once, erect, had risen",
-"three hellish, blood-stained Furies:",
-"they had the limbs and shape of women,",
-"their waists encircled by green hydras.",
-"Thin serpents and horned snakes entwined,",
-"in place of hair, their savage brows.",
-"And he, who knew full well the handmaids",
-"to the queen of endless lamentation,",
-"said to me: 'See the fierce Furies.",
-"'That is Megaera on the left. On the right",
-"Alecto wails. In the middle",
-"is Tisiphone.' And with that he fell silent.",
-"Each rent her breast with her own nails.",
-"And with their palms they struck themselves, shrieking.",
-"In fear I pressed close to the poet.",
-"'Let Medusa come and we'll turn him to stone,'",
-"they cried, looking down. 'To our cost,",
-"we failed to avenge the assault of Theseus.'",
-"'Turn your back and keep your eyes shut,",
-"for if the Gorgon head appears and should you see it,",
-"all chance for your return above is lost.'",
-"While my master spoke he turned me round",
-"and, not relying on my hands alone,",
-"covered my face with his hands also.",
-"O you who have sound intellects,",
-"consider the teaching that is hidden",
-"behind the veil of these strange verses.",
-"And now there came, over the turbid waves,",
-"a dreadful, crashing sound",
-"that set both shores to trembling.",
-"It sounded like a mighty wind,",
-"made violent by waves of heat,",
-"that strikes the forest and with unchecked force",
-"shatters the branches, hurls them away, and,",
-"magnificent in its roiling cloud of dust, drives on,",
-"putting beast and shepherd to flight.",
-"He freed my eyes and said: 'Now look",
-"across the scum of that primeval swamp",
-"to where the vapor is most dense and harsh.'",
-"As frogs, before their enemy the snake,",
-"all scatter through the water",
-"till each sits huddled on the bank,",
-"I saw more than a thousand lost souls flee",
-"before one who so lightly passed across the Styx",
-"he did not touch the water with his feet.",
-"He cleared the thick air from his face,",
-"his left hand moving it away,",
-"as if that murky air alone had wearied him.",
-"It was clear that he was sent from Heaven,",
-"and I turned to the master, who signaled me",
-"to keep silent and bow down before him.",
-"Ah, how full of high disdain he seemed to me!",
-"He came up to the gate and with a wand",
-"he opened it, and there was no resistance.",
-"'O outcasts of Heaven, race despised,'",
-"he began on the terrible threshold, 'whence",
-"comes this insolence you harbor in your souls?",
-"'Why do you kick against that will",
-"which never can be severed from its purpose,",
-"and has so many times increased your pain?",
-"'What profits it to fight against the fates?",
-"Remember your own Cerberus still bears",
-"the wounds of that around his chin and neck.'",
-"Then he turned back along the wretched way",
-"without a word for us, and he seemed pressed,",
-"spurred on by greater cares",
-"than those of the man who stands before him.",
-"We turned our steps toward the city,",
-"emboldened by his holy words.",
-"We entered without further struggle.",
-"And I, in my desire to see",
-"what such a guarded fortress holds,",
-"as soon as I had entered eagerly surveyed",
-"the wide plain stretching on all sides,",
-"so filled with bitter torment and despair.",
-"Just as at Arles where the Rhone goes shallow,",
-"just as at Pola, near Quarnero's gulf,",
-"which hems in Italy and bathes her borders,",
-"the sepulchers make the land uneven,",
-"so all around me in this landscape",
-"the many tombs held even greater sorrow.",
-"For here the graves were strewn with flames",
-"that made them glow with heat",
-"hotter than iron is before it's worked.",
-"All their covers were propped open and from them",
-"issued such dire lamentation it was clear",
-"it came from wretches in despair and pain.",
-"And I: 'Master, who are these souls",
-"entombed within these chests and who make known",
-"their plight with sighs of sorrow?'",
-"And he: 'Here, with all their followers,",
-"are the arch-heretics of every sect.",
-"The tombs are far more laden than you think.",
-"'Like is buried here with like,",
-"though their graves burn with unlike heat.'",
-"Then, after he turned to the right,",
-"we passed between the torments and the lofty ramparts."],
-["Now my master takes a hidden path",
-"between the city's ramparts and the torments,",
-"and I come close behind him.",
-"'O lofty virtue,' I began, 'who lead me",
-"as you will around these impious circles,",
-"speak to me and satisfy my wishes.",
-"'The souls that lie within the sepulchers,",
-"may they be seen? For all the lids are raised",
-"and there is no one standing guard.'",
-"And he to me: 'All will be shut and sealed",
-"when the souls return from Jehosaphat",
-"with the bodies they have left above.",
-"'Here Epicurus with all his followers,",
-"who hold the soul dies with the body,",
-"have their burial place.",
-"'But soon your need to have an answer",
-"will be satisfied right here,",
-"as will the wish you hide from me.'",
-"And I: 'Good leader, from you I do not keep",
-"my heart concealed except to speak few words —",
-"as you've from time to time advised.'",
-"'O Tuscan, passing through the city of fire,",
-"alive, and with such courtesy of speech,",
-"if it would please you, stay your steps awhile.",
-"'Your way of speaking makes it clear",
-"that you are native to that noble city",
-"to which I was perhaps too cruel.'",
-"This voice came suddenly",
-"from one sarcophagus, so that, startled,",
-"I drew closer to my leader.",
-"And he to me: 'Turn back! What are you doing?",
-"Look, there Farinata stands erect —",
-"you can see all of him from the waist up.'",
-"Already I had fixed my gaze on his.",
-"And he was rising, lifting chest and brow",
-"as though he held all Hell in utter scorn.",
-"At which my leader: 'Choose your words with care,'",
-"and his hands, ready, encouraging,",
-"thrust me toward him among the tombs.",
-"When I stood at the foot of his tomb",
-"he looked at me a moment. Then he asked,",
-"almost in disdain: 'Who were your ancestors?'",
-"And I, eager to obey, held nothing back,",
-"but told him who they were,",
-"at which he barely raised his eyebrows",
-"and said: 'They were most bitter enemies",
-"to me, my forebears, and my party —",
-"not once, but twice, I had to drive them out.'",
-"'If they were banished,' I responded, 'they returned",
-"from every quarter both the first time and the second,",
-"a skill that Yours have failed to learn as well.'",
-"Then, beside him, in the open tomb, up came",
-"a shade, visible to the chin: I think",
-"he had raised himself upon his knees.",
-"He looked around me as though he wished to see",
-"if someone else were with me,",
-"and when his hesitant hopes were crushed,",
-"weeping, he said: 'If you pass through this dark",
-"prison by virtue of your lofty genius,",
-"where is my son and why is he not with you?'",
-"And I to him: 'I come not on my own:",
-"he who stands there waiting leads me through,",
-"perhaps to one Your Guido held in scorn.'",
-"His words and the manner of his punishment",
-"already had revealed his name to me,",
-"and thus was my reply so to the point.",
-"Suddenly erect, he cried: 'What?",
-"Did you say \"he held\"? Lives he not still?",
-"Does not the sweet light strike upon his eyes?'",
-"When he perceived that I made some delay",
-"before I answered, he fell backward",
-"and showed himself no more.",
-"But the other, that great soul at whose wish",
-"I had stopped, did not change countenance,",
-"nor bend his neck, nor move his chest.",
-"And he, continuing from where he'd paused:",
-"'That they have badly learned this skill",
-"torments me more than does this bed.",
-"'But the face of the lady reigning here",
-"will be rekindled not fifty times before you too",
-"shall know how difficult a skill that is to learn.",
-"'And, so may you return to the sweet world,",
-"tell me, why are your people,",
-"in every edict, so pitiless against my kin?'",
-"Then I to him: 'The havoc and great slaughter",
-"that dyed the Arbia red caused them to raise",
-"such prayers in our temple.'",
-"He sighed and shook his head, then spoke:",
-"'I was not alone, nor surely without cause",
-"would I have acted with the rest.",
-"'But it was I alone, when all agreed",
-"to make an end of Florence, I alone",
-"who dared speak out in her defense.'",
-"'So may Your seed sometime find peace,",
-"pray untie for me this knot,' I begged him,",
-"'which has entangled and confused my judgment.",
-"'From what I hear, it seems",
-"you see beforehand that which time will bring,",
-"but cannot know what happens in the present.'",
-"'We see, like those with faulty vision,",
-"things at a distance,' he replied. 'That much,",
-"for us, the mighty Ruler's light still shines.",
-"'When things draw near or happen now,",
-"our minds are useless. Without the words of others",
-"we can know nothing of your human state.",
-"'Thus it follows that all our knowledge",
-"will perish at the very moment",
-"the portals of the future close.'",
-"Then, remorseful for my fault, I said:",
-"'Will You tell him who fell back down",
-"his son is still among the living?",
-"'And let him know, if I was slow to answer,",
-"it was because I was preoccupied",
-"with doubts You have resolved for me.'",
-"And now my master summoned me,",
-"so that I begged the spirit to reveal,",
-"at once, who else was down there with him.",
-"His answer was: 'More than a thousand lie",
-"here with me: both the second Frederick",
-"and the Cardinal. Of the rest I do not speak.'",
-"With that he dropped from sight. I turned my steps",
-"to the venerable poet, mulling",
-"those words that seemed to augur ill.",
-"He started out, and then, as we were going,",
-"asked: 'Why are you so bewildered?'",
-"And I answered fully what he asked.",
-"'Keep in mind what you have heard against you,",
-"but also now give heed to this,'",
-"the sage insisted — and he raised one finger.",
-"'When you shall stand before the radiance",
-"of her whose fair eyes see and understand,",
-"from her you'll learn the journey of your life.'",
-"Then he turned his footsteps to the left.",
-"Leaving the wall, we headed toward the center",
-"along a path that leads into a pit.",
-"Its stench offended even at that height." ]
-];
 
-var cantoData = [
-  {
-    "canto": 3,
-    "lineStart": 1,
-    "lineEnd": 21,
-    "circle": -1,
-    "shortDescript": "At the Gate",
-    "motion": 1,
-    "threshold": 1,
-    "object": true
-  },
-  {
-    "canto": 3,
-    "lineStart": 22,
-    "lineEnd": 69,
-    "circle": 0,
-    "shortDescript": "The Neutrals",
-    "motion": 1,
-    "threshold": 0,
-    "object": true
-  },
-  {
-    "canto": 3,
-    "lineStart": 70,
-    "lineEnd": 81,
-    "circle": 0,
-    "shortDescript": "Souls at the Banks of Acheron",
-    "motion": 1,
-    "threshold": 0,
-    "object": true
-  },
-  {
-    "canto": 3,
-    "lineStart": 82,
-    "lineEnd": 99,
-    "circle": 0,
-    "shortDescript": "Charon",
-    "motion": 1,
-    "threshold": 0,
-    "object": true
-  },
-  {
-    "canto": 3,
-    "lineStart": 100,
-    "lineEnd": 120,
-    "circle": 0,
-    "shortDescript": "Charon ferrys the Souls",
-    "motion": 1,
-    "threshold": 0,
-    "object": false
-  },
-  {
-    "canto": 3,
-    "lineStart": 121,
-    "lineEnd": 136,
-    "circle": 0,
-    "shortDescript": "Virgil and an Earthquake",
-    "motion": 0,
-    "threshold": 0,
-    "object": false
-  }
-];
-var eventData = {
-  "type": "FeatureCollection",
-  "features": [
-  {
-    "canto": 3,
-    "lineStart": 22,
-    "lineEnd": 69,
-    "circle": 0,
-    "shortDescript": "The Neutrals",
-    "motion": 1,
-    "threshold": "",
-    "object": 1,
-    "speech": "",
-    "objectType": "Neutrals",
-    "objectNumber": "m",
-    "distribution": "rows",
-    "rows": 2,
-    "radiusEnd": 2,
-    "radiusStart": 2,
-    "ychange": 0,
-    "HSLlightHigh": 0.43,
-    "HSLlightLow": 0,
-    "HSLsat": 0.06,
-    "HSLhue": 0.58,
-    "danteTheta": 4.3,
-    "thetaSpread": 0.05,
-    "thetaStart": 5,
-    "dotSize": 0.5,
-    "dots": 80
-  },
-  {
-    "canto": 3,
-    "lineStart": 70,
-    "lineEnd": 81,
-    "circle": 0,
-    "shortDescript": "Souls at the Banks of Acheron",
-    "motion": 1,
-    "threshold": "",
-    "object": 1,
-    "speech": "",
-    "objectType": "Souls",
-    "objectNumber": "m",
-    "distribution": "scatter",
-    "rows": 2,
-    "radiusEnd": 3,
-    "radiusStart": 6,
-    "ychange": 0,
-    "HSLlightHigh": 0.5,
-    "HSLlightLow": 0.3,
-    "HSLsat": 1,
-    "HSLhue": 0.11,
-    "danteTheta": 4.3,
-    "thetaSpread": 0.3,
-    "thetaStart": 4.45,
-    "dotSize": 0.4,
-    "dots": 47
-  },
-  {
-    "canto": 3,
-    "lineStart": 82,
-    "lineEnd": 99,
-    "circle": 0,
-    "shortDescript": "Charon",
-    "motion": 1,
-    "threshold": "",
-    "object": 1,
-    "speech": "",
-    "objectType": "Demon",
-    "objectNumber": 1,
-    "distribution": "rows",
-    "rows": 1,
-    "radiusEnd": 10,
-    "radiusStart": 10,
-    "ychange": 0,
-    "HSLlightHigh": 0.35,
-    "HSLlightLow": 0,
-    "HSLsat": 1,
-    "HSLhue": 0.02,
-    "danteTheta": 4.3,
-    "thetaSpread": 0,
-    "thetaStart": 4.3,
-    "dotSize": 0.5,
-    "dots": 1
-  },
-  {
-    "canto": 4,
-    "lineStart": 25,
-    "lineEnd": 66,
-    "circle": 1,
-    "shortDescript": "Souls of Limbo",
-    "motion": 1,
-    "threshold": "",
-    "object": 1,
-    "speech": "",
-    "objectType": "Souls",
-    "objectNumber": "m",
-    "distribution": "scatter",
-    "rows": 2,
-    "radiusEnd": 5,
-    "radiusStart": 3,
-    "ychange": 0,
-    "HSLlightHigh": 0.8,
-    "HSLlightLow": 0.2,
-    "HSLsat": 1,
-    "HSLhue": 0.11,
-    "danteTheta": 4.3,
-    "thetaSpread": 2.6,
-    "thetaStart": 5.7,
-    "dotSize": 0.4,
-    "dots": 90
-  },
-  {
-    "canto": 4,
-    "lineStart": 67,
-    "lineEnd": 78,
-    "circle": 1,
-    "shortDescript": "The Brighter Ridge of Limbo",
-    "motion": 1,
-    "threshold": "",
-    "object": 1,
-    "speech": "",
-    "objectType": "Souls",
-    "objectNumber": "m",
-    "distribution": "scatter",
-    "rows": 2,
-    "radiusEnd": 5,
-    "radiusStart": 3,
-    "ychange": 0,
-    "HSLlightHigh": 0.8,
-    "HSLlightLow": 0.05,
-    "HSLsat": 1,
-    "HSLhue": 0.11,
-    "danteTheta": 4.3,
-    "thetaSpread": 1,
-    "thetaStart": 3.1,
-    "dotSize": 0.4,
-    "dots": 80
-  },
-  {
-    "canto": 4,
-    "lineStart": 79,
-    "lineEnd": 105,
-    "circle": 1,
-    "shortDescript": "Homer, Horace, Ovid, Lucan",
-    "motion": 1,
-    "threshold": "",
-    "object": 1,
-    "speech": "",
-    "objectType": "Souls",
-    "objectNumber": 4,
-    "distribution": "rows",
-    "rows": 2,
-    "radiusEnd": 2,
-    "radiusStart": 3,
-    "ychange": 0,
-    "HSLlightHigh": 0.8,
-    "HSLlightLow": 0,
-    "HSLsat": 1,
-    "HSLhue": 0.11,
-    "danteTheta": 4.3,
-    "thetaSpread": 0.02,
-    "thetaStart": 2.1,
-    "dotSize": 0.6,
-    "dots": 4
-  },
-  {
-    "canto": 4,
-    "lineStart": 106,
-    "lineEnd": 117,
-    "circle": 1,
-    "shortDescript": "The Noble Castle",
-    "motion": 1,
-    "threshold": "",
-    "object": 1,
-    "speech": "",
-    "objectType": "Architecture",
-    "objectNumber": 1,
-    "distribution": "rows",
-    "rows": 1,
-    "radiusEnd": 5,
-    "radiusStart": 5,
-    "ychange": 0,
-    "HSLlightHigh": 0.32,
-    "HSLlightLow": 0,
-    "HSLsat": 1,
-    "HSLhue": 0.27,
-    "danteTheta": 4.3,
-    "thetaSpread": 0.02,
-    "thetaStart": 2,
-    "dotSize": 1.2,
-    "dots": 1
-  },
-  {
-    "canto": 4,
-    "lineStart": 118,
-    "lineEnd": 129,
-    "circle": 1,
-    "shortDescript": "Unsaved Virtuous: Active Life",
-    "motion": 1,
-    "threshold": "",
-    "object": 1,
-    "speech": "",
-    "objectType": "Souls",
-    "objectNumber": 14,
-    "distribution": "rows",
-    "rows": 2,
-    "radiusEnd": 1,
-    "radiusStart": 6,
-    "ychange": 0,
-    "HSLlightHigh": 0.65,
-    "HSLlightLow": 0,
-    "HSLsat": 1,
-    "HSLhue": 0.11,
-    "danteTheta": 4.3,
-    "thetaSpread": 0.02,
-    "thetaStart": 1.95,
-    "dotSize": 0.4,
-    "dots": 14
-  },
-  {
-    "canto": 4,
-    "lineStart": 130,
-    "lineEnd": 151,
-    "circle": 1,
-    "shortDescript": "Unsaved Virtuous: Comteplative Life",
-    "motion": 1,
-    "threshold": 1,
-    "object": 1,
-    "speech": "",
-    "objectType": "Souls",
-    "objectNumber": 21,
-    "distribution": "rows",
-    "rows": 3,
-    "radiusEnd": 1,
-    "radiusStart": 2,
-    "ychange": 0,
-    "HSLlightHigh": 0.75,
-    "HSLlightLow": 0,
-    "HSLsat": 1,
-    "HSLhue": 0.11,
-    "danteTheta": 4.3,
-    "thetaSpread": 0.02,
-    "thetaStart": 1.95,
-    "dotSize": 0.4,
-    "dots": 21
-  },
-  {
-    "canto": 5,
-    "lineStart": 1,
-    "lineEnd": 24,
-    "circle": 2,
-    "shortDescript": "Minos",
-    "motion": 1,
-    "threshold": 1,
-    "object": 1,
-    "speech": "",
-    "objectType": "Demon",
-    "objectNumber": 1,
-    "distribution": "rows",
-    "rows": 1,
-    "radiusEnd": 0,
-    "radiusStart": 0,
-    "ychange": 0,
-    "HSLlightHigh": 0.3,
-    "HSLlightLow": 0,
-    "HSLsat": 1,
-    "HSLhue": 0.02,
-    "danteTheta": 1.5,
-    "thetaSpread": 0,
-    "thetaStart": 1.5,
-    "dotSize": 0.6,
-    "dots": 1
-  },
-  {
-    "canto": 5,
-    "lineStart": 25,
-    "lineEnd": 45,
-    "circle": 2,
-    "shortDescript": "Souls (The Lustful)",
-    "motion": 1,
-    "threshold": "",
-    "object": 1,
-    "speech": "",
-    "objectType": "Souls",
-    "objectNumber": "m",
-    "distribution": "scatter",
-    "rows": 2,
-    "radiusEnd": 5,
-    "radiusStart": 3,
-    "ychange": 0,
-    "HSLlightHigh": 0.5,
-    "HSLlightLow": 0.2,
-    "HSLsat": 1,
-    "HSLhue": 0.11,
-    "danteTheta": 1.2,
-    "thetaSpread": 4,
-    "thetaStart": 2.5,
-    "thetaGap": 0.6,
-    "thetaGapStart": 0.6,
-    "thetaGapEnd": 0.2,
-    "dotSize": 0.4,
-    "dots": 167
-  },
-  {
-    "canto": 5,
-    "lineStart": 46,
-    "lineEnd": 72,
-    "circle": 2,
-    "shortDescript": "Ladies and Knights of Old",
-    "motion": 1,
-    "threshold": "",
-    "object": 1,
-    "speech": "",
-    "objectType": "Souls",
-    "objectNumber": 12,
-    "distribution": "rows",
-    "rows": 2,
-    "radiusEnd": 2,
-    "radiusStart": 4,
-    "ychange": 0,
-    "HSLlightHigh": 0.5,
-    "HSLlightLow": 0.2,
-    "HSLsat": 1,
-    "HSLhue": 0.11,
-    "danteTheta": 0.5,
-    "thetaSpread": 0.02,
-    "thetaStart": 0.5,
-    "dotSize": 0.5,
-    "dots": 12
-  },
-  {
-    "canto": 5,
-    "lineStart": 73,
-    "lineEnd": 87,
-    "circle": 2,
-    "shortDescript": "Francesca and Paolo",
-    "motion": 0,
-    "threshold": "",
-    "object": 1,
-    "speech": "",
-    "objectType": "Souls",
-    "objectNumber": 2,
-    "distribution": "rows",
-    "rows": 2,
-    "radiusEnd": 2,
-    "radiusStart": 4,
-    "ychange": 0,
-    "HSLlightHigh": 0.3,
-    "HSLlightLow": 0,
-    "HSLsat": 1,
-    "HSLhue": 0.11,
-    "danteTheta": 1.2,
-    "thetaSpread": 0.02,
-    "thetaStart": 0.25,
-    "dotSize": 0.6,
-    "dots": 2
-  },
-  {
-    "canto": 6,
-    "lineStart": 13,
-    "lineEnd": 33,
-    "circle": 3,
-    "shortDescript": "Cerberus",
-    "motion": 1,
-    "threshold": "",
-    "object": 1,
-    "speech": "",
-    "objectType": "Demon",
-    "objectNumber": 1,
-    "distribution": "rows",
-    "rows": 1,
-    "radiusEnd": 0,
-    "radiusStart": 0,
-    "ychange": 0,
-    "HSLlightHigh": 0.3,
-    "HSLlightLow": 0,
-    "HSLsat": 1,
-    "HSLhue": 0.02,
-    "danteTheta": 4.5,
-    "thetaSpread": 0,
-    "thetaStart": 4.5,
-    "dotSize": 0.6,
-    "dots": 1
-  },
-  {
-    "canto": 6,
-    "lineStart": 34,
-    "lineEnd": 36,
-    "circle": 3,
-    "shortDescript": "Souls (The Gluttons)",
-    "motion": 1,
-    "threshold": "",
-    "object": 1,
-    "speech": "",
-    "objectType": "Souls",
-    "objectNumber": "m",
-    "distribution": "scatter",
-    "rows": 2,
-    "radiusEnd": 5,
-    "radiusStart": 3,
-    "ychange": 0,
-    "HSLlightHigh": 0.4,
-    "HSLlightLow": 0,
-    "HSLsat": 1,
-    "HSLhue": 0.11,
-    "danteTheta": 1.2,
-    "thetaSpread": 4,
-    "thetaStart": 6,
-    "dotSize": 0.4,
-    "dots": 88
-  },
-  {
-    "canto": 6,
-    "lineStart": 37,
-    "lineEnd": 57,
-    "circle": 3,
-    "shortDescript": "Ciacco",
-    "motion": 1,
-    "threshold": "",
-    "object": 1,
-    "speech": "",
-    "objectType": "Soul",
-    "objectNumber": 1,
-    "distribution": "rows",
-    "rows": 1,
-    "radiusEnd": 2,
-    "radiusStart": 9,
-    "ychange": 0,
-    "HSLlightHigh": 0.5,
-    "HSLlightLow": 0,
-    "HSLsat": 1,
-    "HSLhue": 0.11,
-    "danteTheta": 1.2,
-    "thetaSpread": 0.02,
-    "thetaStart": 4,
-    "dotSize": 0.6,
-    "dots": 1
-  },
-  {
-    "canto": 7,
-    "lineStart": 1,
-    "lineEnd": 15,
-    "circle": 4,
-    "shortDescript": "Plutus",
-    "motion": 1,
-    "threshold": "",
-    "object": 1,
-    "speech": "",
-    "objectType": "Demon",
-    "objectNumber": 1,
-    "distribution": "rows",
-    "rows": 1,
-    "radiusEnd": 0,
-    "radiusStart": 0,
-    "ychange": 0,
-    "HSLlightHigh": 0.3,
-    "HSLlightLow": 0,
-    "HSLsat": 1,
-    "HSLhue": 0.02,
-    "danteTheta": 2.7,
-    "thetaSpread": 0,
-    "thetaStart": 2.7,
-    "dotSize": 0.6,
-    "dots": 1
-  },
-  {
-    "canto": 7,
-    "lineStart": 16,
-    "lineEnd": 36,
-    "circle": 4,
-    "shortDescript": "Soul (Avaricious and Prodigal)",
-    "motion": 1,
-    "threshold": "",
-    "object": 1,
-    "speech": "",
-    "objectType": "Souls",
-    "objectNumber": "m",
-    "distribution": "scatter",
-    "rows": 2,
-    "radiusEnd": 6,
-    "radiusStart": 3,
-    "ychange": 0,
-    "HSLlightHigh": 0.45,
-    "HSLlightLow": 0,
-    "HSLsat": 1,
-    "HSLhue": 0.11,
-    "danteTheta": 1.2,
-    "thetaSpread": 4,
-    "thetaStart": 4.3,
-    "dotSize": 0.4,
-    "dots": 148
-  },
-  {
-    "canto": 7,
-    "lineStart": 109,
-    "lineEnd": 117,
-    "circle": 5,
-    "shortDescript": "Souls in the Bog of Styx",
-    "motion": 1,
-    "threshold": "",
-    "object": 1,
-    "speech": "",
-    "objectType": "Souls",
-    "objectNumber": "m",
-    "distribution": "scatter",
-    "rows": 2,
-    "radiusEnd": 1,
-    "radiusStart": 2,
-    "ychange": 0,
-    "HSLlightHigh": 0.4,
-    "HSLlightLow": 0,
-    "HSLsat": 1,
-    "HSLhue": 0.11,
-    "danteTheta": 1.2,
-    "thetaSpread": 4,
-    "thetaStart": 3,
-    "dotSize": 0.4,
-    "dots": 72
-  },
-  {
-    "canto": 7,
-    "lineStart": 118,
-    "lineEnd": 130,
-    "circle": 5,
-    "shortDescript": "Souls under Styx",
-    "motion": 0,
-    "threshold": "",
-    "object": 1,
-    "speech": "",
-    "objectType": "Souls",
-    "objectNumber": "m",
-    "distribution": "scatter",
-    "rows": 2,
-    "radiusEnd": 5,
-    "radiusStart": 4,
-    "ychange": 0,
-    "HSLlightHigh": 0.15,
-    "HSLlightLow": 0.1,
-    "HSLsat": 0.35,
-    "HSLhue": 0.72,
-    "danteTheta": 1.2,
-    "thetaSpread": 4,
-    "thetaStart": 3,
-    "dotSize": 0.4,
-    "dots": 97
-  },
-  {
-    "canto": 8,
-    "lineStart": 13,
-    "lineEnd": 24,
-    "circle": 5,
-    "shortDescript": "Phlegyas",
-    "motion": 0,
-    "threshold": "",
-    "object": 1,
-    "speech": "",
-    "objectType": "Demon",
-    "objectNumber": 1,
-    "distribution": "rows",
-    "rows": 1,
-    "radiusEnd": 0,
-    "radiusStart": 7,
-    "ychange": 1,
-    "HSLlightHigh": 0.4,
-    "HSLlightLow": 0,
-    "HSLsat": 1,
-    "HSLhue": 0.02,
-    "danteTheta": 0.9,
-    "thetaSpread": 0,
-    "thetaStart": 0.9,
-    "dotSize": 0.7,
-    "dots": 1
-  },
-  {
-    "canto": 8,
-    "lineStart": 31,
-    "lineEnd": 63,
-    "circle": 5,
-    "shortDescript": "Flippo Argenti",
-    "motion": 1,
-    "threshold": "",
-    "object": 1,
-    "speech": "",
-    "objectType": "Soul",
-    "objectNumber": 1,
-    "distribution": "rows",
-    "rows": 1,
-    "radiusEnd": 0,
-    "radiusStart": 9,
-    "ychange": 0.5,
-    "HSLlightHigh": 0.35,
-    "HSLlightLow": 0,
-    "HSLsat": 0.35,
-    "HSLhue": 0.72,
-    "danteTheta": 0.9,
-    "thetaSpread": 0,
-    "thetaStart": 0.91,
-    "dotSize": 0.4,
-    "dots": 1
-  },
-  {
-    "canto": 8,
-    "lineStart": 82,
-    "lineEnd": 93,
-    "circle": 6,
-    "shortDescript": "The Wall of Dis",
-    "motion": 0,
-    "threshold": 1,
-    "object": 1,
-    "speech": "",
-    "objectType": "Demons",
-    "objectNumber": 1,
-    "distribution": "scatter",
-    "rows": 2,
-    "radiusEnd": 3,
-    "radiusStart": -1,
-    "ychange": 5,
-    "HSLlightHigh": 0.25,
-    "HSLlightLow": 0.10,
-    "HSLsat": 1,
-    "HSLhue": 0.02,
-    "danteTheta": 0.9,
-    "thetaSpread": 1.1,
-    "thetaStart": 1.55,
-    "dotSize": 0.45,
-    "dots": 66
-  },{
-    "canto": 9,
-    "lineStart": 118,
-    "lineEnd": 133,
-    "circle": 6,
-    "shortDescript": "Souls in Tombs (Heritics)",
-    "motion": 1,
-    "threshold": 0,
-    "object": 1,
-    "speech": 0,
-    "objectType": "Souls",
-    "objectNumber": "m",
-    "distribution": "scatter",
-    "rows": 2,
-    "radiusEnd": 3,
-    "radiusStart": 1,
-    "ychange": 0,
-    "HSLlightHigh": 0.48,
-    "HSLlightLow": 0.4,
-    "HSLsat": 1,
-    "HSLhue": 0.11,
-    "danteTheta": 1.2,
-    "thetaSpread": 3,
-    "thetaStart": 2.5,
-    "thetaGapStart": 1.65,
-    "thetaGapEnd": 1.15,
-    "dotSize": 0.7,
-    "dots": 63
-  }, {
-    "canto": 10,
-    "lineStart": 22,
-    "lineEnd": 51,
-    "circle": 6,
-    "shortDescript": "Farinata",
-    "motion": 0,
-    "threshold": 0,
-    "object": 1,
-    "speech": 0,
-    "objectType": "Soul",
-    "objectNumber": 1,
-    "distribution": "rows",
-    "rows": 1,
-    "radiusEnd": 0,
-    "radiusStart": 3,
-    "ychange": 0,
-    "HSLlightHigh": 0.4,
-    "HSLlightLow": 0,
-    "HSLsat": 1,
-    "HSLhue": 0.11,
-    "danteTheta": 1.3,
-    "thetaSpread": 0,
-    "thetaStart": 1.3,
-    "thetaGap": 0,
-    "dotSize": 0.85,
-    "dots": 1
-  },
-  {
-    "canto": 10,
-    "lineStart": 52,
-    "lineEnd": 72,
-    "circle": 6,
-    "shortDescript": "Cavalcante (in the same Tomb)",
-    "motion": 0,
-    "threshold": 0,
-    "object": 1,
-    "speech": 0,
-    "objectType": "Soul",
-    "objectNumber": 1,
-    "distribution": "rows",
-    "rows": 1,
-    "radiusEnd": 0,
-    "radiusStart": 3,
-    "ychange": 0.5,
-    "HSLlightHigh": 0.4,
-    "HSLlightLow": 0,
-    "HSLsat": 1,
-    "HSLhue": 0.11,
-    "danteTheta": 1.3,
-    "thetaSpread": 0,
-    "thetaStart": 1.33,
-    "thetaGap": 0,
-    "dotSize": 0.35,
-    "dots": 1
-  },{
-    "canto": 10,
-    "lineStart": 115,
-    "lineEnd": 123,
-    "circle": 6,
-    "shortDescript": "Other Souls in the Tomb",
-    "motion": 0,
-    "threshold": 0,
-    "object": 1,
-    "speech": 0,
-    "objectType": "Souls",
-    "objectNumber": "m",
-    "distribution": "rows",
-    "rows": 2,
-    "radiusEnd": 1,
-    "radiusStart": 2.7,
-    "ychange": 0,
-    "HSLlightHigh": 0.4,
-    "HSLlightLow": 0.3,
-    "HSLsat": 1,
-    "HSLhue": 0.11,
-    "danteTheta": 1.3,
-    "thetaSpread": 0.02,
-    "thetaStart": 1.5,
-    "thetaGap": 0,
-    "dotSize": 0.3,
-    "dots": 14 
-     },  {
-    "canto": 11,
-    "lineStart": 1,
-    "lineEnd": 15,
-    "circle": 6,
-    "shortDescript": "Tomb of Pope Anastasius",
-    "motion": 0,
-    "threshold": 0,
-    "object": 1,
-    "speech": 0,
-    "objectType": "Soul",
-    "objectNumber": 1,
-    "distribution": "rows",
-    "rows": 1,
-    "radiusEnd": 0,
-    "radiusStart": 6,
-    "ychange": 0,
-    "HSLlightHigh": 0.46,
-    "HSLlightLow": 0,
-    "HSLsat": 1,
-    "HSLhue": 0.11,
-    "danteTheta": 0.8,
-    "thetaSpread": 0,
-    "thetaStart": 0.8,
-    "thetaGapStart": 0,
-    "thetaGapEnd": 0,
-    "dotSize": 0.75,
-    "dots": 1
-  },{
-    "canto": 12,
-    "lineStart": 13,
-    "lineEnd": 27,
-    "circle": 7,
-    "shortDescript": "The Minotaur",
-    "motion": 1,
-    "threshold": 1,
-    "object": 1,
-    "speech": 0,
-    "objectType": "Demon",
-    "objectNumber": 1,
-    "distribution": "rows",
-    "rows": 1,
-    "radiusEnd": 0,
-    "radiusStart": 0.1,
-    "ychange": 0,
-    "HSLlightHigh": 0.3,
-    "HSLlightLow": 0,
-    "HSLsat": 1,
-    "HSLhue": 0.02,
-    "danteTheta": 2.7,
-    "thetaSpread": 0,
-    "thetaStart": 0.5,
-    "thetaGapStart": 0,
-    "thetaGapEnd": 0,
-    "dotSize": 0.6,
-    "dots": 1
-  },  {
-    "canto": 12,
-    "lineStart": 55,
-    "lineEnd": 66,
-    "circle": 7,
-    "shortDescript": "The Centaurs",
-    "motion": 1,
-    "threshold": 0,
-    "object": 1,
-    "speech": 0,
-    "objectType": "Demons",
-    "objectNumber": "m",
-    "distribution": "scatter",
-    "rows": 2,
-    "radiusEnd": 1,
-    "radiusStart": 1,
-    "ychange": 0,
-    "HSLlightHigh": 0.18,
-    "HSLlightLow": 0.12,
-    "HSLsat": 1,
-    "HSLhue": 0.02,
-    "danteTheta": 6,
-    "thetaSpread": 4,
-    "thetaStart": 1,
-    "thetaGapStart": 0,
-    "thetaGapEnd": 0,
-    "dotSize": 0.5,
-    "dots": 80
-      },{
-    "canto": 12,
-    "lineStart": 115,
-    "lineEnd": 117,
-    "circle": 7,
-    "shortDescript": "River up to their heads",
-    "motion": 0,
-    "threshold": 0,
-    "object": 1,
-    "speech": 0,
-    "objectType": "Souls",
-    "objectNumber": "m",
-    "distribution": "scatter",
-    "rows": 2,
-    "radiusEnd": 3,
-    "radiusStart": 2,
-    "ychange": 0,
-    "HSLlightHigh": 0.15,
-    "HSLlightLow": 0.25,
-    "HSLsat": 0.89,
-    "HSLhue": 0.01,
-    "danteTheta": 1.2,
-    "thetaSpread": 6,
-    "thetaStart": 3,
-    "thetaGapStart": 0,
-    "thetaGapEnd": 0,
-    "dotSize": 0.4,
-    "dots": 97
+
+
+  function cleanDataType(column) {
+      	if (!isNaN(column)) {
+return Number(column);
+} else if (column == "TRUE") {
+return true;
+} else if (column == "FALSE") {
+return false;
+} else {
+return column;
+}
+
   }
 
-]
-   }
-   
+var eventData = [];
+var cantoData = [];
+jQuery.get('DanteFlowtab.txt', function(data) {
+    var rows = data.split('\n');
+    var objectName = rows[0].split('\t');
+    for  (var i=1; i < 200; i++) {
+    var cols = rows[i].split('\t');
+//make eventsData
+    	if (cols[7] == true || cols[12] > 0) {
+    	var featureSet = new Object;
+    	for (var j=0; j < 27; j++) {
+    	var rowname = objectName[j];
+    	var colname = cleanDataType(cols[j]);
+    	featureSet[rowname] = colname;
+    	}
+    	
+ eventData.push(featureSet);
+    	}
+//make cantoData
+	  	var cantoSet = new Object;
+    	for (var k=0; k < 10; k++) {
+    	//console.log(objectName[k]);
+    var rowname = objectName[k];
+    //	console.log(cols[k]);
+    	var colname = cleanDataType(cols[k]);
+    	cantoSet[rowname] = colname;
+    	}
+    	    //	console.log(cantoSet);
+
+ cantoData.push(cantoSet);
+
+    }
+  //   			init();
+// 			animate();
+console.log(status);
+    
+}).done(function() {
+    console.log(cantoData);
+        			init();
+		animate();
+
+
+  });
+  
+  var colorType = [];
+colorType["Soul"] = "#FFEEB2";
+colorType["Souls"] = "#FFEEB2";
+colorType["Demon"] = "#cc1800";
+colorType["Demons"] = "#cc1800";
+colorType["Neutrals"] = "#969ba0";
+colorType["Virgil"] = "#E5D499";
+colorType["Dante"] = "#E5D499";
+colorType["Architecture"] = "#429d0a";
+
+
    ///TOGGLE BETWEEN READING AND EXPLORE MODE
 			var readingmode = false;
-			var transitionwait = false;
+			var transitionwait = true;
 	//Global from tracking story breaks in stanzas || for the dynamic scroll
 		var storyBreaks, currentEpisode;
 	var theOpening = false;
 	var openingObjects = 0;
 	var openingParticle = 0;
 			
+	//OPENING ANIMATION VARIABLES
+	var openingRotationTime = 200;
+	var openingDrawSpeed = 1;
+	var openingStanzaFade = 1;
 	//threeJS globals		
 			var renderer, scene, controls, camera, stats;			
 			var particles, uniforms, cylinder, ring;
 			var particleGroup = -1;
+			var myCanto;
 			var lastParticle = -1;
 			//var lastStanza = -1;
 			var lastInter;
 			var lightnessArray = [];
 			
-			//rotation var
-			var qa
+			//rotation var -- what does it mean? I don't know....
+			var qa;
 			
 			var twelveLines, myLocation;
 			var mouseTrap, stanzaShow;
@@ -2176,9 +267,9 @@ var eventData = {
 			var raycaster, intersects;
 			var mouse, INTERSECTED;
 			var rotation = 0.001;
-
-			init();
-			animate();
+// 
+// 			init();
+// 			animate();
 
 			function init() {
 
@@ -2219,32 +310,59 @@ controls = new THREE.TrackballControls( camera );
 
 ///BUILDING THE FRAME OF THE INFERNO
  var edgeMaterial = new THREE.MeshBasicMaterial( { color: 0x999999, transparent: true, opacity: 0.1, side: THREE.FrontSide } )
+ var wallMaterial = new THREE.MeshBasicMaterial( { color: 0x444444, transparent: true, opacity: 0.4, side: THREE.DoubleSide } )
+ var sphereMat = new THREE.MeshBasicMaterial( { color: 0x333333, wireframe: true, transparent: true, opacity: 0.5, side: THREE.DoubleSide } )
   var floorMaterial = new THREE.MeshBasicMaterial( { color: 0x666666, transparent: true, opacity: 0.1, side: THREE.DoubleSide } )
+  var smallSphereMat = new THREE.MeshBasicMaterial( { color: 0x990000, transparent: true, opacity: 1, side: THREE.DoubleSide } )
 
-var sDem = [143, 130, 117, 104, 91, 78, 65, 55, 43, 36, 33, 30, 27, 24, 21, 18, 15, 12, 9, 9];
+//var sDem = [143, 130, 117, 104, 91, 78, 65, 55, 43, 36, 33, 30, 27, 24, 21, 18, 15, 12, 9, 9];
+var sDem = [143, 130, 118, 106, 94, 82, 70, 60, 43, 36, 33, 30, 27, 24, 21, 18, 15, 12, 9, 9];
 var yDem = [70, 64, 58, 52, 44, 36, 30, 10, -29, -32, -35, -38, -41, -44, -47, -50, -53, -70,]
 
 for (u = 0; u < 19; u++) {
+if (u !== 6) {
  var geometry = new THREE.CylinderGeometry( sDem[u], sDem[u], 6, 22, 1, true );
 
  //var cpostion = new THREE.Vector3(100, 100, 100)
  cylinder = new THREE.Mesh( geometry, edgeMaterial);
 cylinder.position.y = yDem[u];
 scene.add( cylinder );
+}
 
  ring = new THREE.Mesh( new THREE.CylinderGeometry( sDem[u], sDem[u+1], 0.5, 100, 1, true ), floorMaterial );
 				ring.position.set( 0, yDem[u]-3, 0 );
 				scene.add( ring );
 }
+//wall of dis
+ var wallOfDis = new THREE.CylinderGeometry( sDem[6], sDem[6], 9, 100, 1, true );
+  wallPlace = new THREE.Mesh( wallOfDis, wallMaterial);
+wallPlace.position.y = yDem[6] + 1;
+scene.add( wallPlace );
 
+// var geometry = new THREE.SphereGeometry( 200, 33, 33 );
+// //var material = new THREE.MeshBasicMaterial( {color: 0xffff00} );
+// var sphere = new THREE.Mesh( geometry, sphereMat );
+// sphere.position.y = -70;
+// scene.add( sphere );
+// var geometry = new THREE.SphereGeometry( 1, 32, 32 );
+// //var material = new THREE.MeshBasicMaterial( {color: 0xffff00} );
+// var sphere = new THREE.Mesh( geometry, smallSphereMat );
+// sphere.position.y = -70;
+// scene.add( sphere );
+
+
+ //var cpostion = new THREE.Vector3(100, 100, 100)
+//  cylinder = new THREE.Mesh( geometry, edgeMaterial);
+// cylinder.position.y = yDem[u];
+// scene.add( cylinder );
 
 
 
 //BULDING THE PARTICLE SYSTEM
 //get the total number of elements
 var dotNum = 0;
-for ( var j = 0; j < eventData.features.length; j++) {
-dotNum += eventData.features[j].dots;
+for ( var j = 0; j < eventData.length; j++) {
+dotNum += eventData[j].dots;
 CantoTrack.push(dotNum);
 }
 				var positions = new Float32Array( dotNum * 3 );
@@ -2257,55 +375,55 @@ CantoTrack.push(dotNum);
 				var thet = 4.3;
 				var circleNum = 0;
 				var starti = 0;
-				var endi = eventData.features[0].dots;
-	for ( j = 0; j < eventData.features.length; j++) {
-					thet = eventData.features[j].thetaStart;
-					circleNum = eventData.features[j].circle;
+				var endi = eventData[0].dots;
+	for ( j = 0; j < eventData.length; j++) {
+					thet = eventData[j].thetaStart;
+					circleNum = eventData[j].circle;
 					if (j > 0) {
-					starti +=  eventData.features[j - 1].dots;
-					endi += eventData.features[j].dots;
+					starti +=  eventData[j - 1].dots;
+					endi += eventData[j].dots;
 					}
-					var radi = sDem[circleNum] - eventData.features[j].radiusStart;
+					var radi = sDem[circleNum] - eventData[j].radiusStart;
 			for ( var i = starti; i < endi; i ++ ) {
 				
-				if (eventData.features[j].distribution == "rows") {
-					if (eventData.features[j].rows > 1) {
-					var rowdiv = eventData.features[j].dots / eventData.features[j].rows;
+				if (eventData[j].distribution == "rows") {
+					if (eventData[j].rows > 1) {
+					var rowdiv = eventData[j].dots / eventData[j].rows;
 					var checki = i - starti;
 					if (checki % rowdiv == 0 & checki > 0) {
-						radi = radi - eventData.features[j].radiusEnd;
-						thet = eventData.features[j].thetaStart;
+						radi = radi - eventData[j].radiusEnd;
+						thet = eventData[j].thetaStart;
 						}
 						}
-										thet -= eventData.features[j].thetaSpread;
+										thet -= eventData[j].thetaSpread;
 
 						var pZ = radi * Math.cos(thet),
-						pY = yDem[circleNum]-3 + eventData.features[j].ychange,
+						pY = yDem[circleNum]-3 + eventData[j].ychange,
 						pX = radi* Math.sin(thet),
 						vertex = new THREE.Vector3(pX, pY, pZ);
 						vertex.toArray( positions, i * 3 );
 					}
-				if (eventData.features[j].distribution == "scatter") {
-					var mythet = thet - eventData.features[j].thetaSpread * Math.random();
-					if (eventData.features[j].thetaGapStart > 0) {
-					if (mythet < eventData.features[j].thetaGapStart && mythet > eventData.features[j].thetaGapEnd) {
-						mythet -= eventData.features[j].thetaGapStart - eventData.features[j].thetaGapEnd;
+				if (eventData[j].distribution == "scatter") {
+					var mythet = thet - eventData[j].thetaSpread * Math.random();
+					if (eventData[j].thetaGapStart > 0) {
+					if (mythet < eventData[j].thetaGapStart && mythet > eventData[j].thetaGapEnd) {
+						mythet -= eventData[j].thetaGapStart - eventData[j].thetaGapEnd;
 					}
 					}
-					var myradi = radi - eventData.features[j].radiusEnd * Math.random();
+					var myradi = radi - eventData[j].radiusEnd * Math.random();
 						var pZ = myradi * Math.cos(mythet),
-						pY = yDem[circleNum]-3 + eventData.features[j].ychange,
+						pY = yDem[circleNum]-3 + eventData[j].ychange,
 						pX = myradi* Math.sin(mythet),
 						vertex = new THREE.Vector3(pX, pY, pZ);
 						vertex.toArray( positions, i * 3 );
 					}
-				var Lightness = eventData.features[j].HSLlightHigh;
-				if (eventData.features[j].HSLlightLow > 0) {
-				var Lightvar = eventData.features[j].HSLlightLow * Math.random() 
+				var Lightness = eventData[j].HSLlightHigh;
+				if (eventData[j].HSLlightLow > 0) {
+				var Lightvar = eventData[j].HSLlightLow * Math.random() 
 				Lightness -= Lightvar.toFixed(2);
 				}
 					
-					color.setHSL( eventData.features[j].HSLhue, eventData.features[j].HSLsat, 0);
+					color.setHSL( eventData[j].HSLhue, eventData[j].HSLsat, 0);
 					lightnessArray.push(Lightness);
 					///MAKE AN ARRAY FOR LIGHTNESS!!!!
 
@@ -2322,7 +440,7 @@ CantoTrack.push(dotNum);
 			
 					color.toArray( colors, i * 3 );
 
-					sizes[ i ] = PARTICLE_SIZE * eventData.features[j].dotSize;
+					sizes[ i ] = PARTICLE_SIZE * eventData[j].dotSize;
 					
 
 				}
@@ -2456,29 +574,27 @@ function generateTexture() {
 				raycaster.setFromCamera( mouse, camera );
 				
 				if (theOpening) {
-				var nowOpening = openingObjects / 20;
+				var nowOpening = openingObjects / openingDrawSpeed;
 					if (nowOpening % 1 == 0) {
-			for (hh = 0; hh < eventData.features[nowOpening].dots; hh++) {
+			for (hh = 0; hh < eventData[nowOpening].dots; hh++) {
 						var color = new THREE.Color();
 
-						color.setHSL( eventData.features[nowOpening].HSLhue, eventData.features[nowOpening].HSLsat, lightnessArray[openingParticle] );
+						color.setHSL( eventData[nowOpening].HSLhue, eventData[nowOpening].HSLsat, lightnessArray[openingParticle] );
 						color.toArray( attributes.customColor.array, openingParticle * 3);
 						openingParticle++;
 						}
 												attributes.customColor.needsUpdate = true;
 				}
 						openingObjects++;
-						//openingObjects.toFixed(2);
-						console.log(openingObjects);
-			if (openingObjects > 600) {
+			if (openingObjects > (eventData.length - 1) * openingDrawSpeed) {
 				theOpening = false;
-				  moveAndLookAt(camera, new THREE.Vector3(0, 60, 350), new THREE.Vector3(0, 0, 0), {duration: 4000});
+				  moveAndLookAt(camera, new THREE.Vector3(0, 60, 350), new THREE.Vector3(0, 0, 0), {duration: openingRotationTime});
 
 				}
 				}
 
-//console.log(openingObjects);
 				intersects = raycaster.intersectObject( particles );
+				if (!transitionwait) {
 				if ( intersects.length > 0) {
 					//checking for the current intersection
 					
@@ -2504,13 +620,13 @@ function generateTexture() {
 						var color = new THREE.Color();
 						
 						if (lastParticle >= 0) {
-						color.setHSL( eventData.features[lastParticle].HSLhue, eventData.features[lastParticle].HSLsat, lightnessArray[lastInter] );
+						color.setHSL( eventData[lastParticle].HSLhue, eventData[lastParticle].HSLsat, lightnessArray[lastInter] );
 						color.toArray( attributes.customColor.array, lastInter * 3);
 						}
 						lastParticle = objectSet;
 						lastInter = INTERSECTED;
 
-						color.setHSL( eventData.features[objectSet].HSLhue, eventData.features[objectSet].HSLsat, lightnessArray[lastInter] + 0.2 );
+						color.setHSL( eventData[objectSet].HSLhue, eventData[objectSet].HSLsat, lightnessArray[lastInter] + 0.2 );
 						color.toArray( attributes.customColor.array, INTERSECTED * 3);;			
 						
 						attributes.size.needsUpdate = true;
@@ -2531,27 +647,9 @@ function generateTexture() {
 					INTERSECTED = null;
 				
 				} else {
-				//now it only rotates when the is no intersect
-				// particles.rotation.x += 0.0005;
-				//particles.rotation.y -= 0.01;
-// 				cylinder.rotation.x += 0.0005;
-// 				cylinder.rotation.y += 0.001;
-// 				ring.rotation.x += 0.0005;
-// 				ring.rotation.y += 0.001;
-// 				//camera.position.y += 0.01;
-				//camera.position.x += 0.05;
-		// 		rotation += 0.005;
-// 					camera.position.x = 0;
- //			     camera.position.x = Math.sin(rotation) * 40;
-// 
- 	// 				camera.position.y = Math.sin(rotation) * 40;
-//					camera.position.z = Math.cos(rotation) * 300;
-// 					camera.lookAt( scene.position ); // the origin
-// 					if (camera.position.z < 0) {
-// 					    camera.rotation.z = 0;
-// 					}
 
 
+				}
 				}
 
 				renderer.render( scene, camera );
@@ -2562,8 +660,8 @@ function seeStanzas() {
 					if (lastParticle != particleGroup) {
 						particleGroup = lastParticle;
 						twelveLines = ""
-						var myCanto = eventData.features[particleGroup].canto;
-						var myLines = eventData.features[particleGroup].lineStart-1;
+						myCanto = eventData[particleGroup].canto;
+						var myLines = eventData[particleGroup].lineStart-1;
 						for (q = 0; q < 3; q++) {
 						twelveLines += theCantos[myCanto][myLines+q];
 						if ((q + 1) % 3 == 0) {
@@ -2572,10 +670,9 @@ function seeStanzas() {
 						twelveLines += "<BR>\n";
 						
 						}
-						myLocation = "Circle " + eventData.features[particleGroup].circle + ": " + eventData.features[particleGroup].shortDescript;
-						var cantoLine = "<i>Inferno</i> Canto " + eventData.features[particleGroup].canto + ", lines " + eventData.features[particleGroup].lineStart + " - " + eventData.features[particleGroup].lineEnd;
+						myLocation = "Circle " + eventData[particleGroup].circle + ": " + eventData[particleGroup].shortDescript;
+						var cantoLine = "<i>Inferno</i> Canto " + eventData[particleGroup].canto + ", lines " + eventData[particleGroup].lineStart + " - " + eventData[particleGroup].lineEnd;
 						stanzaShow = setTimeout(seeStanzas,800);
-						//seeLocation(myLocation);					
 					
 $( "#info" ).fadeOut(500, function() {$( "#info" ).html( "<p>" + myLocation.toUpperCase() + "</p>" ).fadeIn(2000) });
  var p = $( "#stanzas > p");
@@ -2584,17 +681,14 @@ p.fadeOut(500, function() {p.html( twelveLines ).fadeIn(1000) });
 var position = p.position();
  $( '#stanzas' ).scrollTop( position.top);
 }
-//}
 	}
 	
-// function seeLocation() {
-// $( "#info" ).fadeOut(500, function() {$( "#info" ).html( "<span class='red'>" + myLocation.toUpperCase() + "</span>" ).fadeIn(500) });
-// }
+
 function pullStanzas(group, num) {
 
 }
 $( document ).ready(function() {
-$( "#firstlines" ).fadeOut(7000, function() {
+$( "#firstlines" ).fadeOut(100, function() {
 theOpening = true;
 });
 	$('html').dblclick(function() {
@@ -2606,7 +700,6 @@ theOpening = true;
 	} else {
 	controls.enabled = false;
 	readingmode = true;
-//$('#info').animate({top: '506px'}, 1500, 'swing');
 $('#stanzas').animate({top: '10%', height: '70%'}, 1500, 'swing', function() {
     // Animation complete.
     
@@ -2615,14 +708,23 @@ $('#stanzas').animate({top: '10%', height: '70%'}, 1500, 'swing', function() {
 						var stanzasAfter = "";
 						var stanzaBefore = [];
 						
-						var myCanto = eventData.features[particleGroup].canto;
-						var myLines = eventData.features[particleGroup].lineStart-1;
+						myCanto = eventData[particleGroup].canto;
+						var myLines = eventData[particleGroup].lineStart-1;
 						var cantoLength = theCantos[myCanto].length;
-						
+						//building the colors 
 						storyBreaks = [];
+						cantoDesc = [];
+						colorInfo = [];
 						for (var i=0; i < cantoData.length; i++) {
+						if(cantoData[i].canto == myCanto) {
 						var endline = Math.floor(cantoData[i].lineEnd / 3 - 1);
+						var descr = cantoData[i].shortDescript;
+						var colors = cantoData[i].objectType;
 						storyBreaks.push(endline);
+						cantoDesc.push(descr);
+						colorInfo.push(colors)
+						
+						}
 						}
 
 						//stanzas after
@@ -2717,11 +819,9 @@ console.log(currentEpisode);
 }
 }
 });
-/// $( "#info" ).html( "<p>" + cantoData[0].shortDescript + "</p>" );
 
 
 function markCanto(currentp) {
-// $( "#stanzas > p" ).filter( ":even" ).fadeTo(10, 0.6);
 
 var lastevent = 0;
 var nextevent = 0;
@@ -2737,29 +837,33 @@ break;
 }
 console.log(storyBreaks);
 console.log(currentp);
-//   if (doit) {
-//   $( "#stanzas > p" ).fadeTo(10, 1);
-//   console.log("please?");
-//   } else {
+console.log(currentEpisode);
+console.log(myCanto);
+console.log(cantoDesc);
+
+
+//var colorInfo = "#FF0000";
+var colorname = colorInfo[currentEpisode];
+console.log(colorInfo);
+//colorType["Architecture"]
+$("#info").css("opacity", "1");
+$("#info").html("<p>" + "CIRCLE 0: " + cantoDesc[currentEpisode].toUpperCase() + "</P>").css('color', colorType[colorname]);
 
  $( "#stanzas > p" ).filter(function( index ) {
     return index < lastevent || index > nextevent;
-   // }).css("opacity", "0.6");   
     }).css("color", "#666666");  
-  //   }).fadeTo(1000, 0.6);
  $( "#stanzas > p" ).filter(function( index ) {
     return index >= lastevent && index <= nextevent;
         }).css("color", "#d1cab1");  
         
-//  }).css("opacity", "1");
-
-  
-//  $( "#stanzas > p" ).filter(function( index ) {
-//     return index > 23 && index < 27;
-//   }).fadeIn(10);
 }
 
+
+function aniEnd() {
+transitionwait=false;
+}
 function moveAndLookAt(camera, dstpos, dstlookat, options) {
+ setTimeout(aniEnd,openingRotationTime);
   options || (options = {duration: 300});
 
   var origpos = new THREE.Vector3().copy(camera.position); // original position
