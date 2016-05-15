@@ -179,7 +179,7 @@ return column;
 
 var eventData = [];
 var cantoData = [];
-jQuery.get('DanteFlowtab.txt', function(data) {
+jQuery.get('js/DanteFlowtab.txt', function(data) {
     var rows = data.split('\n');
     var objectName = rows[0].split('\t');
     for  (var i=1; i < 200; i++) {
