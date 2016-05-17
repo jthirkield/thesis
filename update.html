@@ -4,7 +4,9 @@
 		<title>INFERNO MAP</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed|Open+Sans|Lato|PT+Sans|Source+Sans+Pro' rel='stylesheet' type='text/css'>		<style>
+<link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+
+<style>
 		html {
     overflow: scroll;
     overflow-x: hidden;
@@ -17,6 +19,15 @@
 ::-webkit-scrollbar-thumb {
     background: #FF0000;
 }
+
+
+@font-face {
+    font-family: MyriadPro;
+    src: url(type/MyriadPro-Regular.otf);/* 
+        src: url(type/MinionPro-Regular.otf);
+ */
+
+}
 				body {
 				color: #d1cab1;
 				background-color: #000000;
@@ -26,6 +37,18 @@
 			#container {
 				background-color: #000000;
 			}
+			#circle {
+				position: absolute;
+				margin-bottom: 19px;
+				bottom: 10%;
+				left: 18px;
+			}
+			
+			h3:hover {
+   			color: #999999;
+   			cursor: pointer;
+ }
+
 			#info {
 				position: absolute;
 				bottom: 10%;
@@ -33,17 +56,47 @@
 				padding: 5px;
 				margin-left: 33px;
 				opacity: 0.6;
-font-family: 'Source Sans Pro', sans-serif;
+font-family: 'MyriadPro', sans-serif;
 				font-size: 15px;
 				text-align: left;
 				font-weight: normal;
 			}
-		h1 {
-				
+			#showCanto {
+				position: absolute;
+				top: 4%;
+/* 				padding-bottom: 10px; */
+				background-color: #000000;
+/* 				margin-bottom: 70px; */
+				width: 400px;
+/* 				padding: 5px; */
+				margin-left: 33px;
+/* 				background-color: #333333; */
+/* 				margin-top: 44px; */
+				opacity: 1;
+font-family: 'MyriadPro', sans-serif;
 				font-size: 16px;
+				text-align: left;
+				font-weight: normal;
+			}
+		h3 {
 				
-				font-family: "Helvetica";
+				padding: 0px;
 
+				font-family: 'MyriadPro', sans-serif;
+				font-size: 25px;
+				color: #BBBBBB;
+				text-align: left;
+				font-weight: normal;
+
+			}
+		h4 {
+				
+				padding: 0px;
+
+				font-family: 'MyriadPro', sans-serif;
+				font-size: 25px;
+				color: #BBBBBB;
+				text-align: left;
 				font-weight: normal;
 
 			}
@@ -54,10 +107,9 @@ font-family: 'Source Sans Pro', sans-serif;
 				padding: 0px;
 				margin-left: 33px;
 				height: 88px;
-font-family: 'Source Sans Pro', sans-serif;
-				font-size: 15px;
+font-family: 'MyriadPro', sans-serif;
+				font-size: 16px;
 				line-height: 22px;
-				overflow: hidden;
 				text-align: left;
 				font-weight: normal;
 				overflow: auto;
@@ -70,10 +122,9 @@ font-family: 'Source Sans Pro', sans-serif;
 /* 
 				height: 88px;
  */
-font-family: 'Source Sans Pro', sans-serif;
+font-family: 'MyriadPro', sans-serif;
 				font-size: 33px;
 				line-height: 60px;
-				overflow: hidden;
 				text-align: left;
 				font-weight: normal;
 				overflow: auto;
@@ -84,7 +135,7 @@ font-family: 'Source Sans Pro', sans-serif;
 				width: 333px;
 				padding: 5px;
 				margin-left: 33px;
-				font-family: "Gill Sans";
+				font-family: "MyriadPro";
 				font-size: 14px;
 				text-align: left;
 				font-weight: normal;
@@ -95,19 +146,29 @@ font-family: 'Source Sans Pro', sans-serif;
 		</style>
 		<script>
 		var theCantos;
+		var eventData;
+		var cantoData;
+
 		</script>
 	</head>
 
 	<body>
+
 		<div id="container"></div>
 		<div id="stanzas"><p id='now'></p></div>
+		<div id="showCanto"></div>
 		<div id="info"></div>
+		<div id="circle">
+					<svg height="16" width="16">
+  <circle id="linkCircle" fill="#000000" cx="8" cy="8" r="6">
+  </svg>
+
+		</div>
 		<div id="firstlines">
 		<p>Midway in the journey of our life<BR>
 		I came to myself in a dark wood,<BR>
 		for the straight way was lost.<BR></p>
 		</div>
-
 		<script src="build/three.min.js"></script>
 		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 		<script src="js/Detector.js"></script>
@@ -115,6 +176,8 @@ font-family: 'Source Sans Pro', sans-serif;
 		<script src="js/controls/TrackballControls.js"></script>
 				<script src="js/libs/tween.min.js"></script>
 				<script src="cantos.js"></script>
+				<script src="eventData.js"></script>
+				<script src="cantoData.js"></script>
 
 
 		<script type="x-shader/x-vertex" id="vertexshader">
@@ -177,55 +240,55 @@ return column;
 
   }
 
-var eventData = [];
-var cantoData = [];
-jQuery.get('js/DanteFlowtab.txt', function(data) {
-    var rows = data.split('\n');
-    var objectName = rows[0].split('\t');
-    for  (var i=1; i < 200; i++) {
-    var cols = rows[i].split('\t');
-//make eventsData
-    	if (cols[7] == true || cols[12] > 0) {
-    	var featureSet = new Object;
-    	for (var j=0; j < 27; j++) {
-    	var rowname = objectName[j];
-    	var colname = cleanDataType(cols[j]);
-    	featureSet[rowname] = colname;
-    	}
-    	
- eventData.push(featureSet);
-    	}
-//make cantoData
-	  	var cantoSet = new Object;
-    	for (var k=0; k < 10; k++) {
-    	//console.log(objectName[k]);
-    var rowname = objectName[k];
-    //	console.log(cols[k]);
-    	var colname = cleanDataType(cols[k]);
-    	cantoSet[rowname] = colname;
-    	}
-    	    //	console.log(cantoSet);
-
- cantoData.push(cantoSet);
-
-    }
-  //   			init();
-// 			animate();
-console.log(status);
-    
-}).done(function() {
-    console.log(cantoData);
-        			init();
-		animate();
-
-
-  });
+// var eventData = [];
+// var cantoData = [];
+// jQuery.get("DanteFlowtab.txt", function(data) {
+//     var rows = data.split('\n');
+//     var objectName = rows[0].split('\t');
+//     for  (var i=1; i < 200; i++) {
+//     var cols = rows[i].split('\t');
+// //make eventsData
+//     	if (cols[7] == true || cols[12] > 0) {
+//     	var featureSet = new Object;
+//     	for (var j=0; j < 27; j++) {
+//     	var rowname = objectName[j];
+//     	var colname = cleanDataType(cols[j]);
+//     	featureSet[rowname] = colname;
+//     	}
+//     	
+//  eventData.push(featureSet);
+//     	}
+// //make cantoData
+// 	  	var cantoSet = new Object;
+//     	for (var k=0; k < 10; k++) {
+//     	//console.log(objectName[k]);
+//     var rowname = objectName[k];
+//     //	console.log(cols[k]);
+//     	var colname = cleanDataType(cols[k]);
+//     	cantoSet[rowname] = colname;
+//     	}
+//     	    //	console.log(cantoSet);
+// 
+//  cantoData.push(cantoSet);
+// 
+//     }
+//   //   			init();
+// // 			animate();
+// console.log(status);
+//     
+// }).done(function() {
+//     console.log(eventData);
+//         			init();
+// 		animate();
+// 
+// 
+//   });
   
   var colorType = [];
-colorType["Soul"] = "#FFEEB2";
-colorType["Souls"] = "#FFEEB2";
-colorType["Demon"] = "#cc1800";
-colorType["Demons"] = "#cc1800";
+colorType["Soul"] = "#B27E19";
+colorType["Souls"] = "#B27E19";
+colorType["Demon"] = "#78180a";
+colorType["Demons"] = "#78180a";
 colorType["Neutrals"] = "#969ba0";
 colorType["Virgil"] = "#E5D499";
 colorType["Dante"] = "#E5D499";
@@ -235,18 +298,23 @@ colorType["Architecture"] = "#429d0a";
    ///TOGGLE BETWEEN READING AND EXPLORE MODE
 			var readingmode = false;
 			var transitionwait = true;
+			var scrollCheck = true;
 	//Global from tracking story breaks in stanzas || for the dynamic scroll
-		var storyBreaks, currentEpisode;
+		var storyBreaks, currentEpisode, cantoParticles, colorInfo;
 	var theOpening = false;
 	var openingObjects = 0;
 	var openingParticle = 0;
+	
+	///global for particle attributes
+	var attributes;
+	var particleChanges = false;
 			
 	//OPENING ANIMATION VARIABLES
-	var openingRotationTime = 200;
-	var openingDrawSpeed = 1;
-	var openingStanzaFade = 1;
+	var openingRotationTime = 3000;
+	var openingDrawSpeed = 5;
+	var openfadeTime = 5000;
 	//threeJS globals		
-			var renderer, scene, controls, camera, stats;			
+			var renderer, scene, controls, camera, stats, sphere;			
 			var particles, uniforms, cylinder, ring;
 			var particleGroup = -1;
 			var myCanto;
@@ -267,9 +335,9 @@ colorType["Architecture"] = "#429d0a";
 			var raycaster, intersects;
 			var mouse, INTERSECTED;
 			var rotation = 0.001;
-// 
-// 			init();
-// 			animate();
+
+			init();
+			animate();
 
 			function init() {
 
@@ -339,11 +407,10 @@ scene.add( cylinder );
 wallPlace.position.y = yDem[6] + 1;
 scene.add( wallPlace );
 
-// var geometry = new THREE.SphereGeometry( 200, 33, 33 );
-// //var material = new THREE.MeshBasicMaterial( {color: 0xffff00} );
-// var sphere = new THREE.Mesh( geometry, sphereMat );
-// sphere.position.y = -70;
-// scene.add( sphere );
+var geometry = new THREE.SphereGeometry( 200, 33, 33 );
+var material = new THREE.MeshBasicMaterial( {color: 0xffff00} );
+ sphere = new THREE.Mesh( geometry, sphereMat );
+sphere.position.y = -70;
 // var geometry = new THREE.SphereGeometry( 1, 32, 32 );
 // //var material = new THREE.MeshBasicMaterial( {color: 0xffff00} );
 // var sphere = new THREE.Mesh( geometry, smallSphereMat );
@@ -569,7 +636,7 @@ function generateTexture() {
 
 
 				var geometry = particles.geometry;
-				var attributes = geometry.attributes;
+				attributes = geometry.attributes;
 
 				raycaster.setFromCamera( mouse, camera );
 				
@@ -589,6 +656,7 @@ function generateTexture() {
 			if (openingObjects > (eventData.length - 1) * openingDrawSpeed) {
 				theOpening = false;
 				  moveAndLookAt(camera, new THREE.Vector3(0, 60, 350), new THREE.Vector3(0, 0, 0), {duration: openingRotationTime});
+scene.add( sphere );
 
 				}
 				}
@@ -597,7 +665,8 @@ function generateTexture() {
 				if (!transitionwait) {
 				if ( intersects.length > 0) {
 					//checking for the current intersection
-					
+					scene.remove( sphere );
+
 					if ( INTERSECTED != intersects[ 0 ].index) {
 
 						attributes.size.array[ INTERSECTED ] = PARTICLE_SIZE;
@@ -646,8 +715,11 @@ function generateTexture() {
 					//attributes.size.needsUpdate = true;
 					INTERSECTED = null;
 				
-				} else {
+				} else if (particleChanges) {
+					attributes.customColor.needsUpdate = true;
+											attributes.size.needsUpdate = true;
 
+					particleChanges = false;
 
 				}
 				}
@@ -688,7 +760,7 @@ function pullStanzas(group, num) {
 
 }
 $( document ).ready(function() {
-$( "#firstlines" ).fadeOut(100, function() {
+$( "#firstlines" ).fadeOut(openfadeTime, function() {
 theOpening = true;
 });
 	$('html').dblclick(function() {
@@ -699,6 +771,8 @@ theOpening = true;
 	
 	} else {
 	controls.enabled = false;
+moveAndLookAt(camera, new THREE.Vector3(0, 445, 4), new THREE.Vector3(0, 0, 0), {duration: openingRotationTime});
+
 	readingmode = true;
 $('#stanzas').animate({top: '10%', height: '70%'}, 1500, 'swing', function() {
     // Animation complete.
@@ -707,26 +781,76 @@ $('#stanzas').animate({top: '10%', height: '70%'}, 1500, 'swing', function() {
 						var stanzasBefore = "";
 						var stanzasAfter = "";
 						var stanzaBefore = [];
+						var currentParticleArray = 0;
 						
 						myCanto = eventData[particleGroup].canto;
+						var objectplace = 0;
 						var myLines = eventData[particleGroup].lineStart-1;
+						console.log(myLines)
 						var cantoLength = theCantos[myCanto].length;
 						//building the colors 
 						storyBreaks = [];
 						cantoDesc = [];
 						colorInfo = [];
+						var objectFlow = [];
 						for (var i=0; i < cantoData.length; i++) {
 						if(cantoData[i].canto == myCanto) {
 						var endline = Math.floor(cantoData[i].lineEnd / 3 - 1);
+						var prevendline = Math.floor(cantoData[i - 1].lineEnd / 3 - 1);
+						if (prevendline > endline) prevendline = 0;
 						var descr = cantoData[i].shortDescript;
 						var colors = cantoData[i].objectType;
+						var objectTrue = cantoData[i].object;
+						// find the break at the current line
 						storyBreaks.push(endline);
 						cantoDesc.push(descr);
-						colorInfo.push(colors)
+						colorInfo.push(colors);
+						objectFlow.push(objectTrue);
+						console.log(i);
+
+						var thefirst = 0;
+						if (storyBreaks.length > 1) {
+						thefirst = 3*(storyBreaks[storyBreaks.length-2] + 1);
+						} 
+						if (myLines <= 3*(storyBreaks[storyBreaks.length-1] + 1)  && myLines >= thefirst) {
+						objectplace = storyBreaks.length-1;
+						}
+
+						
 						
 						}
 						}
+					console.log(storyBreaks);
+					//	console.log(objectFlow);
+					//	console.log(objectplace);
+			///get the particle group objects for this canto
+			
+						console.log(particleGroup);
+						console.log(objectplace);
 
+			cantoParticles = [];
+			var particlesBefore = particleGroup;
+			for (var j=objectplace - 1; j > -1; j--) {
+				if (objectFlow[j]) {
+				particlesBefore--;
+				}
+				cantoParticles.unshift(particlesBefore);
+			}
+			var particlesAfter = particleGroup;
+			cantoParticles.push(particlesAfter);
+			currentParticleArray = cantoParticles.length - 1;
+			
+			for (var j=objectplace + 1; j < objectFlow.length; j++) {
+				if (objectFlow[j]) {
+				particlesAfter++;
+				}
+				cantoParticles.push(particlesAfter);
+			}
+									console.log(cantoParticles);
+
+						
+			///need to determine from 
+$('#showCanto').html("<p>CANTO " + convert(myCanto) + "<p>")
 						//stanzas after
 						for (var q = myLines + 3; q < cantoLength; q++) {
 						
@@ -742,8 +866,10 @@ $('#stanzas').animate({top: '10%', height: '70%'}, 1500, 'swing', function() {
 							}
 							
 						} 
-						 $('#stanzas').append( "<h3>" + "Next Canto" + "</h3>").html();
-						//stanzas after
+// 						 $('#stanzas').append( "<a href=>" + "next Canto" + "</h3>").html();
+						$("#stanzas").append("<h3>&#8594;</h3>");
+						$( "#stanzas > h3" ).click(function() {nextCanto(1)});
+							//stanzas after
 						for (var q = 0; q < myLines; q++) {
 						
 							stanzasBefore += theCantos[myCanto][q];
@@ -760,7 +886,8 @@ $('#stanzas').animate({top: '10%', height: '70%'}, 1500, 'swing', function() {
 						 $('#stanzas').prepend("<p>" + stanzaBefore[q] + "</p>").html();
 
 						}
-					 $('#stanzas').prepend("<h1>" + "CANTO III" + "</h1>").html();
+						$("#stanzas").prepend("<h4>&#8592;</h4>");
+						$( "#stanzas > h4" ).click(function() {nextCanto(-1)});
 
 	
 	
@@ -776,6 +903,8 @@ var position = p.position();
   });
   ///this is a function for loading all 
   markCanto(selectedP);
+  glowParticles(cantoParticles[currentParticleArray], false);
+  console.log(currentParticleArray);
 });
 
 }
@@ -784,6 +913,7 @@ var position = p.position();
 });
 
 $( "#stanzas" ).scroll(function() {
+if (scrollCheck) {
 var onfirst = false;
 var onlast = false;
 if (currentEpisode == 0) {
@@ -793,6 +923,8 @@ onlast = true;
 }
 var lastevent = storyBreaks[currentEpisode-1];
 var nextevent = storyBreaks[currentEpisode] + 1;
+var lastparticle = cantoParticles[currentEpisode-1];
+var nextparticle = cantoParticles[currentEpisode + 1];
 //150px for nextevent
 //200px for prev...
 
@@ -806,8 +938,13 @@ var h = $( "#stanzas" ).height();
 if (!onlast) {
 if (nextEpisode.top < 150) {
 console.log(nextevent);
+console.log(cantoParticles);
+console.log(nextparticle);
+console.log(currentEpisode);
 markCanto(nextevent);
-console.log(nextevent);
+if (nextparticle != lastparticle) {
+glowParticles(nextparticle, true);
+}
 }
 }
 if (!onfirst) {
@@ -815,7 +952,11 @@ if (prevEpisode.top > 200) {
 console.log("Change it!!!");
 console.log(currentEpisode);
 markCanto(lastevent);
+if (nextparticle != lastparticle) {
+glowParticles(lastparticle, false);
+}
 console.log(currentEpisode);
+}
 }
 }
 });
@@ -835,19 +976,23 @@ currentEpisode = i;
 break;
 }
 }
-console.log(storyBreaks);
-console.log(currentp);
-console.log(currentEpisode);
-console.log(myCanto);
-console.log(cantoDesc);
+// console.log(storyBreaks);
+// console.log(currentp);
+// console.log(currentEpisode);
+// console.log(myCanto);
+// console.log(cantoDesc);
 
 
 //var colorInfo = "#FF0000";
 var colorname = colorInfo[currentEpisode];
 console.log(colorInfo);
-//colorType["Architecture"]
+
 $("#info").css("opacity", "1");
 $("#info").html("<p>" + "CIRCLE 0: " + cantoDesc[currentEpisode].toUpperCase() + "</P>").css('color', colorType[colorname]);
+$("#linkCircle").css({ fill: colorType[colorname] });
+
+
+//$("#info").html("<p>" + "| CIRCLE " + "0: " + cantoDesc[currentEpisode].toUpperCase() + "</P>")
 
  $( "#stanzas > p" ).filter(function( index ) {
     return index < lastevent || index > nextevent;
@@ -902,6 +1047,135 @@ function moveAndLookAt(camera, dstpos, dstlookat, options) {
     }).start();
   }).call(this);
 }
+
+
+function nextCanto(fb) {
+scrollCheck = false;
+
+
+						var stanzasAfter = " ";
+						myCanto = myCanto + fb;
+						console.log(myCanto);
+					var myLines = 0;
+						var cantoLength = theCantos[myCanto].length;
+						//building the colors 
+						storyBreaks = [];
+						cantoDesc = [];
+						colorInfo = [];
+						for (var i=0; i < cantoData.length; i++) {
+						if(cantoData[i].canto == myCanto) {
+						var endline = Math.floor(cantoData[i].lineEnd / 3 - 1);
+						var descr = cantoData[i].shortDescript;
+						var colors = cantoData[i].objectType;
+						storyBreaks.push(endline);
+						cantoDesc.push(descr);
+						colorInfo.push(colors)
+						
+						}
+						}
+
+
+$( "#stanzas" ).empty();
+
+$('#showCanto').html("<p>CANTO " + convert(myCanto) + "</p>")
+
+			$("#stanzas").append("<h4>&#8592;</h4>");
+					$( "#stanzas > h4" ).click(function() {nextCanto(-1)});
+
+						//stanzas after
+						for (var q = 0; q < cantoLength; q++) {
+						
+							stanzasAfter += theCantos[myCanto][q];
+							if ((q + 1) % 3 == 0 && q + 2 != cantoLength) {
+							
+							 $('#stanzas').append( "<p>" + stanzasAfter + "</p>").html();
+							  stanzasAfter = "";
+							} else if (q == cantoLength - 1){
+								 $('#stanzas').append( "<p>" + stanzasAfter + "</p>").html();
+							} else {
+							stanzasAfter += "<BR>\n";
+							}
+							
+						} 
+// 						 $('#stanzas').append( "<a href=>" + "next Canto" + "</h3>").html();
+						$("#stanzas").append("<h3>&#8594;</h3>");
+					$( "#stanzas > h3" ).click(function() {nextCanto(1)});
+
+ $( '#stanzas' ).scrollTop( 0);
+				    var p = $( "#stanzas > p").eq(0);
+var position = p.position();
+console.log(position.top);
+ $( '#stanzas' ).scrollTop( position.top);
+ markCanto(0);
+ scrollCheck = true;
+//MAYBE THERE IS A WAY TO FADE THIS BUT FOR NOW IT IS TOO MESSY
+
+}
+
+
+var numeralCodes = [["","I","II","III","IV","V","VI","VII","VIII","IX"],         // Ones
+                    ["","X","XX","XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"],   // Tens
+                    ["","C","CC","CCC","CD","D","DC","DCC","DCCC","CM"]];        // Hundreds
+
+function convert(num) {
+  var numeral = "";
+  var digits = num.toString().split('').reverse();
+  for (var i=0; i < digits.length; i++){
+    numeral = numeralCodes[i][parseInt(digits[i])] + numeral;
+  }
+  return numeral;  
+}
+
+function glowParticles(mygroup, forward) {
+
+//check objects for the numbers of
+var particalcount = 0;
+var lastPartCount = 0;
+var lastgroup = mygroup - 1;
+if (!forward) {
+lastgroup = mygroup + 1;
+}
+for (var i = 0; i < eventData.length; i++) {
+if (i < mygroup) {
+particalcount += eventData[i].dots;
+	if (forward && i === mygroup - 2) {
+	lastPartCount = particalcount;
+	} 
+}
+else {
+	if (!forward) {
+	lastPartCount = particalcount + eventData[i].dots;
+	}
+	break;
+}
+}
+
+console.log("mygroup: " + mygroup);
+
+			for (var hh = 0; hh < eventData[mygroup].dots; hh++) {
+						var color = new THREE.Color();
+
+					color.setHSL( eventData[mygroup].HSLhue, eventData[mygroup].HSLsat, lightnessArray[particalcount] + 0.15 );
+						color.toArray( attributes.customColor.array, particalcount * 3);
+						if (eventData[mygroup].dots > 5) {
+						attributes.size.array[ particalcount ] = PARTICLE_SIZE * 0.8;
+						} else {
+						attributes.size.array[ particalcount ] = PARTICLE_SIZE * 1.6;						
+						}
+						particalcount++;
+						}
+			for (var hh = 0; hh < eventData[lastgroup].dots; hh++) {
+						var color = new THREE.Color();
+
+					color.setHSL( eventData[lastgroup].HSLhue, eventData[lastgroup].HSLsat, lightnessArray[lastPartCount]);
+						color.toArray( attributes.customColor.array, lastPartCount * 3);
+						attributes.size.array[ lastPartCount ] = PARTICLE_SIZE * eventData[lastgroup].dotSize;
+						lastPartCount++;
+						}
+					//	attributes.customColor.needsUpdate = true;
+						particleChanges = true;
+}
+
 
 
 		</script>
