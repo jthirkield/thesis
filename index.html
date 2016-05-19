@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>INFERNO MAP</title>
+		<title>VISUALIZING POETIC SPACE: DANTE'S INFERNO</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 <link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
@@ -21,13 +21,10 @@
 }
 
 
-@font-face {
-    font-family: MyriadPro;
-    src: url(type/MyriadPro-Regular.otf);/* 
-        src: url(type/MinionPro-Regular.otf);
- */
-
-}
+ 
+ 
+ 
+ 
 				body {
 				color: #d1cab1;
 				background-color: #000000;
@@ -55,8 +52,8 @@
 				width: 400px;
 				padding: 5px;
 				margin-left: 33px;
-				opacity: 0.6;
-font-family: 'MyriadPro', sans-serif;
+				opacity: 0.7;
+font-family: 'Gill Sans', sans-serif;
 				font-size: 15px;
 				text-align: left;
 				font-weight: normal;
@@ -73,7 +70,7 @@ font-family: 'MyriadPro', sans-serif;
 /* 				background-color: #333333; */
 /* 				margin-top: 44px; */
 				opacity: 1;
-font-family: 'MyriadPro', sans-serif;
+font-family: 'Gill Sans', sans-serif;
 				font-size: 16px;
 				text-align: left;
 				font-weight: normal;
@@ -82,7 +79,7 @@ font-family: 'MyriadPro', sans-serif;
 				
 				padding: 0px;
 
-				font-family: 'MyriadPro', sans-serif;
+				font-family: 'Gill Sans', sans-serif;
 				font-size: 25px;
 				color: #BBBBBB;
 				text-align: left;
@@ -93,7 +90,7 @@ font-family: 'MyriadPro', sans-serif;
 				
 				padding: 0px;
 
-				font-family: 'MyriadPro', sans-serif;
+				font-family: 'Gill Sans', sans-serif;
 				font-size: 25px;
 				color: #BBBBBB;
 				text-align: left;
@@ -107,7 +104,7 @@ font-family: 'MyriadPro', sans-serif;
 				padding: 0px;
 				margin-left: 33px;
 				height: 88px;
-font-family: 'MyriadPro', sans-serif;
+font-family: 'Gill Sans', sans-serif;
 				font-size: 16px;
 				line-height: 22px;
 				text-align: left;
@@ -122,7 +119,7 @@ font-family: 'MyriadPro', sans-serif;
 /* 
 				height: 88px;
  */
-font-family: 'MyriadPro', sans-serif;
+font-family: 'Gill Sans', sans-serif;
 				font-size: 33px;
 				line-height: 60px;
 				text-align: left;
@@ -135,7 +132,7 @@ font-family: 'MyriadPro', sans-serif;
 				width: 333px;
 				padding: 5px;
 				margin-left: 33px;
-				font-family: "MyriadPro";
+				font-family: "Gill Sans";
 				font-size: 14px;
 				text-align: left;
 				font-weight: normal;
@@ -148,7 +145,6 @@ font-family: 'MyriadPro', sans-serif;
 		var theCantos;
 		var eventData;
 		var cantoData;
-
 		</script>
 	</head>
 
@@ -227,72 +223,19 @@ font-family: 'MyriadPro', sans-serif;
 
 
 
-  function cleanDataType(column) {
-      	if (!isNaN(column)) {
-return Number(column);
-} else if (column == "TRUE") {
-return true;
-} else if (column == "FALSE") {
-return false;
-} else {
-return column;
-}
-
-  }
-
-// var eventData = [];
-// var cantoData = [];
-// jQuery.get("DanteFlowtab.txt", function(data) {
-//     var rows = data.split('\n');
-//     var objectName = rows[0].split('\t');
-//     for  (var i=1; i < 200; i++) {
-//     var cols = rows[i].split('\t');
-// //make eventsData
-//     	if (cols[7] == true || cols[12] > 0) {
-//     	var featureSet = new Object;
-//     	for (var j=0; j < 27; j++) {
-//     	var rowname = objectName[j];
-//     	var colname = cleanDataType(cols[j]);
-//     	featureSet[rowname] = colname;
-//     	}
-//     	
-//  eventData.push(featureSet);
-//     	}
-// //make cantoData
-// 	  	var cantoSet = new Object;
-//     	for (var k=0; k < 10; k++) {
-//     	//console.log(objectName[k]);
-//     var rowname = objectName[k];
-//     //	console.log(cols[k]);
-//     	var colname = cleanDataType(cols[k]);
-//     	cantoSet[rowname] = colname;
-//     	}
-//     	    //	console.log(cantoSet);
-// 
-//  cantoData.push(cantoSet);
-// 
-//     }
-//   //   			init();
-// // 			animate();
-// console.log(status);
-//     
-// }).done(function() {
-//     console.log(eventData);
-//         			init();
-// 		animate();
-// 
-// 
-//   });
   
   var colorType = [];
 colorType["Soul"] = "#B27E19";
 colorType["Souls"] = "#B27E19";
-colorType["Demon"] = "#78180a";
-colorType["Demons"] = "#78180a";
+colorType["Demon"] = "#b21500";
+colorType["Demons"] = "#b21500";
 colorType["Neutrals"] = "#969ba0";
 colorType["Virgil"] = "#E5D499";
 colorType["Dante"] = "#E5D499";
-colorType["Architecture"] = "#429d0a";
+colorType["Architecture"] = "#BBBBBB";
+colorType["Castle"] = "#429d0a";
+
+var cirNames = ["The Dark Wood","Circle Zero","First Circle","Second Circle","Third Circle","Fourth Circle","Fifth Circle","Sixth Circle","Seventh Circle","Malebolge | First Ditch","Malebolge | Second Ditch","Malebolge | Third Ditch","Malebolge | Fourth Ditch","Malebolge | Fifth Ditch","Malebolge | Sixth Ditch","Malebolge | Seventh Ditch","Malebolge | Eighth Ditch","Malebolge | Ninth Ditch","Malebolge | Tenth Ditch","Ninth Circle"];
 
 
    ///TOGGLE BETWEEN READING AND EXPLORE MODE
@@ -313,6 +256,7 @@ colorType["Architecture"] = "#429d0a";
 	var openingRotationTime = 3000;
 	var openingDrawSpeed = 5;
 	var openfadeTime = 5000;
+	var firstclick = false;
 	//threeJS globals		
 			var renderer, scene, controls, camera, stats, sphere;			
 			var particles, uniforms, cylinder, ring;
@@ -384,10 +328,10 @@ controls = new THREE.TrackballControls( camera );
   var smallSphereMat = new THREE.MeshBasicMaterial( { color: 0x990000, transparent: true, opacity: 1, side: THREE.DoubleSide } )
 
 //var sDem = [143, 130, 117, 104, 91, 78, 65, 55, 43, 36, 33, 30, 27, 24, 21, 18, 15, 12, 9, 9];
-var sDem = [143, 130, 118, 106, 94, 82, 70, 60, 43, 36, 33, 30, 27, 24, 21, 18, 15, 12, 9, 9];
-var yDem = [70, 64, 58, 52, 44, 36, 30, 10, -29, -32, -35, -38, -41, -44, -47, -50, -53, -70,]
+var sDem = [143, 130, 118, 106, 94, 82, 70, 60, 43, 40, 37, 34, 31, 29, 26, 23, 20, 17, 14, 1];
+var yDem = [70, 64, 58, 52, 44, 36, 30, 10, -29, -32, -35, -38, -41, -44, -47, -50, -53, -56, -70]
 
-for (u = 0; u < 19; u++) {
+for (u = 0; u < 21; u++) {
 if (u !== 6) {
  var geometry = new THREE.CylinderGeometry( sDem[u], sDem[u], 6, 22, 1, true );
 
@@ -450,7 +394,10 @@ CantoTrack.push(dotNum);
 					starti +=  eventData[j - 1].dots;
 					endi += eventData[j].dots;
 					}
-					var radi = sDem[circleNum] - eventData[j].radiusStart;
+					var radi = sDem[0] - eventData[j].radiusStart;
+					if (circleNum > -1) {
+					radi = sDem[circleNum] - eventData[j].radiusStart;
+					}
 			for ( var i = starti; i < endi; i ++ ) {
 				
 				if (eventData[j].distribution == "rows") {
@@ -464,9 +411,13 @@ CantoTrack.push(dotNum);
 						}
 										thet -= eventData[j].thetaSpread;
 
-						var pZ = radi * Math.cos(thet),
-						pY = yDem[circleNum]-3 + eventData[j].ychange,
-						pX = radi* Math.sin(thet),
+						var pZ = radi * Math.cos(thet);
+						
+						var pY = yDem[0]-3 + eventData[j].ychange;
+						if (circleNum > -1) {
+						pY = yDem[circleNum]-3 + eventData[j].ychange;
+						}
+						var pX = radi* Math.sin(thet);
 						vertex = new THREE.Vector3(pX, pY, pZ);
 						vertex.toArray( positions, i * 3 );
 					}
@@ -478,9 +429,12 @@ CantoTrack.push(dotNum);
 					}
 					}
 					var myradi = radi - eventData[j].radiusEnd * Math.random();
-						var pZ = myradi * Math.cos(mythet),
-						pY = yDem[circleNum]-3 + eventData[j].ychange,
-						pX = myradi* Math.sin(mythet),
+						var pZ = myradi * Math.cos(mythet);
+						var pY = yDem[0]-3 + eventData[j].ychange;
+						if (circleNum > -1) {
+						pY = yDem[circleNum]-3 + eventData[j].ychange;
+						}
+						var pX = myradi* Math.sin(mythet);
 						vertex = new THREE.Vector3(pX, pY, pZ);
 						vertex.toArray( positions, i * 3 );
 					}
@@ -665,7 +619,7 @@ scene.add( sphere );
 				if (!transitionwait) {
 				if ( intersects.length > 0) {
 					//checking for the current intersection
-					scene.remove( sphere );
+				//	scene.remove( sphere );
 
 					if ( INTERSECTED != intersects[ 0 ].index) {
 
@@ -742,7 +696,11 @@ function seeStanzas() {
 						twelveLines += "<BR>\n";
 						
 						}
-						myLocation = "Circle " + eventData[particleGroup].circle + ": " + eventData[particleGroup].shortDescript;
+						//calculate circleNum
+
+						var curCircle = eventData[particleGroup].circle;
+					
+						myLocation = cirNames[curCircle + 1] + ": " + eventData[particleGroup].shortDescript;
 						var cantoLine = "<i>Inferno</i> Canto " + eventData[particleGroup].canto + ", lines " + eventData[particleGroup].lineStart + " - " + eventData[particleGroup].lineEnd;
 						stanzaShow = setTimeout(seeStanzas,800);
 					
@@ -764,11 +722,28 @@ $( "#firstlines" ).fadeOut(openfadeTime, function() {
 theOpening = true;
 });
 	$('html').dblclick(function() {
+	if (!firstclick) {
+		scene.remove( sphere );
+		firstclick = true;
+		transitionwait = false;
+	} else {
+
+	
 	if(!transitionwait) {
 	transitionwait = true;
 	
 	if(readingmode) {
-	
+//still need to finish the transition back to explore mode
+// 	$("#stanzas > p:not(#now)").remove();
+// 	$("#stanzas > h3").remove();
+// 	$("#stanzas > h4").remove();
+// 	$('#info').empty();
+// 	$('#showCanto').empty();
+//     $('#stanzas').css({top: '30%', height: '20%'});
+// 	readingmode = false;
+// 	controls.enabled = true;
+// 	scrollCheck = false;
+// 	transitionwait = false;
 	} else {
 	controls.enabled = false;
 moveAndLookAt(camera, new THREE.Vector3(0, 445, 4), new THREE.Vector3(0, 0, 0), {duration: openingRotationTime});
@@ -786,17 +761,24 @@ $('#stanzas').animate({top: '10%', height: '70%'}, 1500, 'swing', function() {
 						myCanto = eventData[particleGroup].canto;
 						var objectplace = 0;
 						var myLines = eventData[particleGroup].lineStart-1;
-						console.log(myLines)
+						//console.log(myLines)
 						var cantoLength = theCantos[myCanto].length;
 						//building the colors 
 						storyBreaks = [];
 						cantoDesc = [];
 						colorInfo = [];
+						episodeCircle = [];
 						var objectFlow = [];
 						for (var i=0; i < cantoData.length; i++) {
 						if(cantoData[i].canto == myCanto) {
 						var endline = Math.floor(cantoData[i].lineEnd / 3 - 1);
-						var prevendline = Math.floor(cantoData[i - 1].lineEnd / 3 - 1);
+						//console.log(cantoData[i]);
+						
+						var prevendline = 0;
+						if (i > 0) {
+						prevendline = Math.floor(cantoData[i - 1].lineEnd / 3 - 1);
+						}
+						//console.log(prevendline);						
 						if (prevendline > endline) prevendline = 0;
 						var descr = cantoData[i].shortDescript;
 						var colors = cantoData[i].objectType;
@@ -806,7 +788,9 @@ $('#stanzas').animate({top: '10%', height: '70%'}, 1500, 'swing', function() {
 						cantoDesc.push(descr);
 						colorInfo.push(colors);
 						objectFlow.push(objectTrue);
-						console.log(i);
+						episodeCircle.push(cantoData[i].circle);
+
+						//console.log(i);
 
 						var thefirst = 0;
 						if (storyBreaks.length > 1) {
@@ -820,13 +804,13 @@ $('#stanzas').animate({top: '10%', height: '70%'}, 1500, 'swing', function() {
 						
 						}
 						}
-					console.log(storyBreaks);
+					//console.log(storyBreaks);
 					//	console.log(objectFlow);
 					//	console.log(objectplace);
 			///get the particle group objects for this canto
 			
-						console.log(particleGroup);
-						console.log(objectplace);
+						//console.log(particleGroup);
+						//console.log(objectplace);
 
 			cantoParticles = [];
 			var particlesBefore = particleGroup;
@@ -846,7 +830,7 @@ $('#stanzas').animate({top: '10%', height: '70%'}, 1500, 'swing', function() {
 				}
 				cantoParticles.push(particlesAfter);
 			}
-									console.log(cantoParticles);
+									//console.log(cantoParticles);
 
 						
 			///need to determine from 
@@ -904,9 +888,9 @@ var position = p.position();
   ///this is a function for loading all 
   markCanto(selectedP);
   glowParticles(cantoParticles[currentParticleArray], false);
-  console.log(currentParticleArray);
+//  console.log(currentParticleArray);
 });
-
+}
 }
 }		
 	})
@@ -937,10 +921,10 @@ var h = $( "#stanzas" ).height();
 
 if (!onlast) {
 if (nextEpisode.top < 150) {
-console.log(nextevent);
-console.log(cantoParticles);
-console.log(nextparticle);
-console.log(currentEpisode);
+// console.log(nextevent);
+// console.log(cantoParticles);
+// console.log(nextparticle);
+// console.log(currentEpisode);
 markCanto(nextevent);
 if (nextparticle != lastparticle) {
 glowParticles(nextparticle, true);
@@ -949,13 +933,13 @@ glowParticles(nextparticle, true);
 }
 if (!onfirst) {
 if (prevEpisode.top > 200) {
-console.log("Change it!!!");
-console.log(currentEpisode);
+//console.log("Change it!!!");
+//console.log(currentEpisode);
 markCanto(lastevent);
 if (nextparticle != lastparticle) {
 glowParticles(lastparticle, false);
 }
-console.log(currentEpisode);
+//console.log(currentEpisode);
 }
 }
 }
@@ -985,11 +969,11 @@ break;
 
 //var colorInfo = "#FF0000";
 var colorname = colorInfo[currentEpisode];
-console.log(colorInfo);
-
+//console.log(colorInfo);
+var myCircle = episodeCircle[currentEpisode];
 $("#info").css("opacity", "1");
-$("#info").html("<p>" + "CIRCLE 0: " + cantoDesc[currentEpisode].toUpperCase() + "</P>").css('color', colorType[colorname]);
-$("#linkCircle").css({ fill: colorType[colorname] });
+$("#info").html("<p>" +  cirNames[myCircle+1].toUpperCase() + ": " + cantoDesc[currentEpisode].toUpperCase() + "</P>").css('color', colorType[colorname]);
+//$("#linkCircle").css({ fill: colorType[colorname] });
 
 
 //$("#info").html("<p>" + "| CIRCLE " + "0: " + cantoDesc[currentEpisode].toUpperCase() + "</P>")
@@ -1005,7 +989,7 @@ $("#linkCircle").css({ fill: colorType[colorname] });
 
 
 function aniEnd() {
-transitionwait=false;
+//transitionwait=false;
 }
 function moveAndLookAt(camera, dstpos, dstlookat, options) {
  setTimeout(aniEnd,openingRotationTime);
@@ -1055,18 +1039,20 @@ scrollCheck = false;
 
 						var stanzasAfter = " ";
 						myCanto = myCanto + fb;
-						console.log(myCanto);
+						//console.log(myCanto);
 					var myLines = 0;
 						var cantoLength = theCantos[myCanto].length;
 						//building the colors 
 						storyBreaks = [];
 						cantoDesc = [];
+						episodeCircle = [];
 						colorInfo = [];
 						for (var i=0; i < cantoData.length; i++) {
 						if(cantoData[i].canto == myCanto) {
 						var endline = Math.floor(cantoData[i].lineEnd / 3 - 1);
 						var descr = cantoData[i].shortDescript;
 						var colors = cantoData[i].objectType;
+						episodeCircle.push(cantoData[i].circle);
 						storyBreaks.push(endline);
 						cantoDesc.push(descr);
 						colorInfo.push(colors)
@@ -1104,7 +1090,7 @@ $('#showCanto').html("<p>CANTO " + convert(myCanto) + "</p>")
  $( '#stanzas' ).scrollTop( 0);
 				    var p = $( "#stanzas > p").eq(0);
 var position = p.position();
-console.log(position.top);
+//console.log(position.top);
  $( '#stanzas' ).scrollTop( position.top);
  markCanto(0);
  scrollCheck = true;
@@ -1150,7 +1136,7 @@ else {
 }
 }
 
-console.log("mygroup: " + mygroup);
+//console.log("mygroup: " + mygroup);
 
 			for (var hh = 0; hh < eventData[mygroup].dots; hh++) {
 						var color = new THREE.Color();
