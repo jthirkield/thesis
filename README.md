@@ -8,6 +8,6 @@ This project seeks to extend these speculations, inspirations and reimaginations
 
 *   [Working Prototype](http://jthirkield.github.io/thesis/)
 
-*   [Written Thesis](http://jthirkield.github.io/thesis/)
+*   [Written Thesis](https://github.com/jthirkield/MSDVthesis/blob/master/writing/Thirkield_Masters_Thesis.pdf)
 
 ###Created by Jonathan Thirkield
