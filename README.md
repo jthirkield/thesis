@@ -6,8 +6,7 @@ Written in the early 1300s, The Divine Comedy, stands at the threshold of the Me
 
 This project seeks to extend these speculations, inspirations and reimaginations into the emergent 21st century paradigms of knowledge generation: the three-dimensional interactive capabilities of the graphical user interface, and the n-dimensional dynamics of data transit. Built in JavaScript, using the Threejs 3-D library and a MongoDB database, this speculative map of Dante’s poetic space serves as an environment for active, exploratory, deep and collaborative reading of the poem. My central questions are: How can poetic space be visualized? And how can such a visualization lead us to new modes of reading, understanding, imagination and expression.
 
-*   [Working Prototype](http://jthirkield.github.io/thesis/)
+*   [Working Prototype](http://www.floatingmedia.com/dante)
 
-*   [Written Thesis](https://github.com/jthirkield/MSDVthesis/blob/master/writing/Thirkield_Masters_Thesis.pdf)
 
 ###Created by Jonathan Thirkield
